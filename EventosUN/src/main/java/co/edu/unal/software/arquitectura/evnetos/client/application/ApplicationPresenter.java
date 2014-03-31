@@ -22,7 +22,6 @@ public class ApplicationPresenter extends
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> HeaderSlot = new Type<RevealContentHandler<?>>();
 
-
 	@ProxyStandard
 	public interface MyProxy extends Proxy<ApplicationPresenter> {
 	}

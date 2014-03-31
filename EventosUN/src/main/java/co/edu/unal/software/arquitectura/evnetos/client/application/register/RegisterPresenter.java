@@ -51,8 +51,8 @@ public class RegisterPresenter extends
 		String correo = getView().getEmail().getText();
 		String username = getView().getUsername().getText();
 		Integer tel = getView().getTelefono().getValue();
-		String clave = getView().getPassword().getSelectedText();
-		if (tel != null && tel.toString().length() > 7) {
+		String clave = getView().getPassword().getText();
+		if (tel != null && tel.toString().length() >= 7) {
 			registerAction = new RegisterAction.Builder(nombres, apellidos,
 					correo, username, clave).telefono(tel).build();
 
@@ -67,7 +67,7 @@ public class RegisterPresenter extends
 			public void onFailure(Throwable caught) {
 				// TODO Auto-generated method stub
 				Window.alert(caught.getLocalizedMessage());
-				
+
 			}
 
 			@Override

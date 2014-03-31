@@ -10,13 +10,13 @@
 
 	<!-- GXT Theme -->
 	<!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
-	<inherits name='com.sencha.gxt.theme.gray.Gray' />
+	<inherits name='com.sencha.gxt.theme.blue.Blue' />
 
 	<!-- GWTP -->
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
 	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 	<inherits name='com.rhemsolutions.PopupWindow' />
-
+	<inherits name="com.bramosystems.oss.player.youtube.YouTube" />
 	<source path='client' />
 	<source path='shared' />
 

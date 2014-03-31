@@ -4,5 +4,6 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 public interface RegisterUiHandlers extends UiHandlers {
 	void doRegister();
+
 	void cancel();
 }
