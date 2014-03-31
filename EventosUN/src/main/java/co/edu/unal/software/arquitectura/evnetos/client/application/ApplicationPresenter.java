@@ -1,5 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application;
 
+import co.edu.unal.software.arquitectura.evnetos.client.application.menu.MenuPresenter;
+
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -20,13 +22,16 @@ public class ApplicationPresenter extends
 	@ContentSlot
 	public static final Type<RevealContentHandler<?>> HeaderSlot = new Type<RevealContentHandler<?>>();
 
+
 	@ProxyStandard
 	public interface MyProxy extends Proxy<ApplicationPresenter> {
 	}
 
 	@Inject
-	public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
+	public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy,
+			MenuPresenter menuPresenter) {
 		super(eventBus, view, proxy, RevealType.Root);
+		setInSlot(HeaderSlot, menuPresenter);
 
 	}
 
