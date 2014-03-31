@@ -2,6 +2,7 @@ package co.edu.unal.software.arquitectura.evnetos.client.gin;
 
 import co.edu.unal.software.arquitectura.evnetos.client.application.ApplicationModule;
 import co.edu.unal.software.arquitectura.evnetos.client.place.NameTokens;
+
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;

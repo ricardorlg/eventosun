@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 lastWarOutDir=/EventosUN/target/m2e-wtp/web-resources
+launchConfigExternalUrlPrefix=http\://localhost\:8080/EventosUN/
 warSrcDir=src/main/webapp
 warSrcDirIsOutput=false

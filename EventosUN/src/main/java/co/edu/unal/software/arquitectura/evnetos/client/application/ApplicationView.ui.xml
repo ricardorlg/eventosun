@@ -1,29 +1,100 @@
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' 
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'
-             xmlns:container='urn:import:com.sencha.gxt.widget.core.client.container'
-             xmlns:gxt='urn:import:com.sencha.gxt.widget.core.client'>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:button="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:core="urn:import:com.sencha.gxt.widget.core.client" xmlns:form="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar">
+	<ui:style>
+	.headerT {
+		color: white;
+		padding: 6px 0px 8px 6px;
+		font-stretch: normal;
+		font-variant: normal;
+		font-size: 24px;
+		font-style: normal;
+		font-size-adjust: none;
+		font-family: tahoma, arial, sans-serif;
+		font-weight: normal;
+	}
+	
+	.header {
+		background-color: #1E4176;
+		background-position-y: 50%;
+		background-attachment: scroll;
+		border: none;
+		padding-left: 3px;
+		height: 33px;
+	}
+	</ui:style>
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="outerMargins">
+		<ui:attributes top="0" right="0" bottom="0" left="0" />
+	</ui:with>
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="northMargins">
+		<ui:attributes top="0" right="0" bottom="5" left="0" />
+	</ui:with>
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="westMargins">
+		<ui:attributes top="5" right="0" bottom="5" left="5" />
+	</ui:with>
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="centerMargins">
+		<ui:attributes top="5" right="5" bottom="5" left="5" />
+	</ui:with>
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="eastMargins">
+		<ui:attributes top="0" right="5" bottom="0" left="5" />
+	</ui:with>
+	<ui:with type="com.sencha.gxt.core.client.util.Margins" field="southMargins">
+		<ui:attributes top="5" right="5" bottom="5" left="5" />
+	</ui:with>
 
-  <!-- http://docs.sencha.com/gxt-guides/3 - GXT guides -->
-  <!-- http://docs.sencha.com/gxt-guides/3/ui/layout/LayoutContainers.html - About layout containers -->
+	<ui:with type="com.sencha.gxt.widget.core.client.container.MarginData"
+		field="outerData">
+		<ui:attributes margins="{outerMargins}" />
+	</ui:with>
+	<ui:with
+		type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData"
+		field="northData">
+		<ui:attributes size="62" />
+	</ui:with>
 
-  <container:Viewport>
-    <g:DockLayoutPanel unit='PCT'>
-      <g:north size='15'>
-        <gxt:ContentPanel ui:field="north"/>
-      </g:north>
-        
-      <g:center>
-        <gxt:ContentPanel ui:field="center"/>
-      </g:center>
-      
-      <g:east size='15'>
-        <gxt:ContentPanel ui:field="east"/>
-      </g:east>
-      
-      <g:west size='15'>
-        <gxt:ContentPanel ui:field="west"/>
-      </g:west>
-    </g:DockLayoutPanel>
-  </container:Viewport>
+	<ui:with type="com.sencha.gxt.widget.core.client.container.MarginData"
+		field="centerData">
+
+	</ui:with>
+	<container:Viewport>
+		<container:SimpleContainer>
+			<container:child layoutData="{outerData}">
+				<container:BorderLayoutContainer
+					ui:field="con" borders="true">
+
+					<container:north layoutData="{northData}">
+
+						<core:ContentPanel borders="false"
+							headerVisible="false" bodyBorder="false">
+							<container:NorthSouthContainer
+								ui:field="headerContainer">
+								<container:north>
+									<g:FlowPanel styleName="{style.header}">
+										<g:FlowPanel styleName="{style.headerT}">
+											<g:Label text="Eventos UN">
+											</g:Label>
+										</g:FlowPanel>
+									</g:FlowPanel>
+								</container:north>
+							</container:NorthSouthContainer>
+
+
+						</core:ContentPanel>
+					</container:north>
+
+
+					<container:center layoutData="{centerData}">
+
+						<!--for nested presenter -->
+						<core:ContentPanel ui:field="contenedor"
+							borders="true" headerVisible="false">
+						</core:ContentPanel>
+					</container:center>
+				</container:BorderLayoutContainer>
+			</container:child>
+		</container:SimpleContainer>
+	</container:Viewport>
 
 </ui:UiBinder>

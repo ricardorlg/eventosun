@@ -14,7 +14,7 @@
     <!-- Get the latest GXT release through support 3.0.6... -->
     <gxt.version>3.0.1</gxt.version>
     <gwt.version>2.5.1</gwt.version>
-    <gwtp.version>1.0</gwtp.version>
+    <gwtp.version>1.2.1</gwtp.version>
     <gin.version>2.0.0</gin.version>
 
     <!-- server -->
@@ -152,24 +152,10 @@
     <!-- GWT-Platform -->
     <dependency>
       <groupId>com.gwtplatform</groupId>
-      <artifactId>gwtp-mvp-client</artifactId>
+      <artifactId>gwtp-all</artifactId>
       <version>${gwtp.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.gwtplatform</groupId>
-      <artifactId>gwtp-dispatch-client</artifactId>
-      <version>${gwtp.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.gwtplatform</groupId>
-      <artifactId>gwtp-dispatch-server-guice</artifactId>
-      <version>${gwtp.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.gwtplatform</groupId>
-      <artifactId>gwtp-dispatch-shared</artifactId>
-      <version>${gwtp.version}</version>
-    </dependency>
+
 
     <!-- DI -->
     <dependency>
