@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="EventosUN" transaction-type="RESOURCE_LOCAL">
+	 <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>co.edu.unal.software.arquitectura.evnetos.server.entities.EveunEvent</class>
+		<class>co.edu.unal.software.arquitectura.evnetos.server.entities.EveunEventLocation</class>
+		<class>co.edu.unal.software.arquitectura.evnetos.server.entities.EveunEventLocationPK</class>
+		<class>co.edu.unal.software.arquitectura.evnetos.server.entities.EveunLocation</class>
+		<class>co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/eventosun"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="mayhem123"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="eclipselink.logging.timestamp" value="true"/>
+			<property name="eclipselink.logging.thread" value="true"/>
+			<property name="eclipselink.logging.session" value="true"/>
+			<property name="eclipselink.logging.level" value="ALL"/>
+			<property name="eclipselink.logging.exceptions" value="true"/>
+			<property name="eclipselink.logging.connection" value="true"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+		</properties>
+	</persistence-unit>
+</persistence>
