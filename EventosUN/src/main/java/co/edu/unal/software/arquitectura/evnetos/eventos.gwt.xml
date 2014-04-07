@@ -8,9 +8,11 @@
 	<stylesheet src="reset.css" />
 	<inherits name='com.sencha.gxt.ui.GXT' />
 
+
+
 	<!-- GXT Theme -->
 	<!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
-	<inherits name='com.sencha.gxt.theme.blue.Blue' />
+	<inherits name='com.sencha.gxt.theme.gray.Gray' />
 
 	<!-- GWTP -->
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />

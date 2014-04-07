@@ -30,4 +30,11 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 			getUiHandlers().openRegister();
 		}
 	}
+
+	@UiHandler("loginButton")
+	public void login(SelectEvent e) {
+		if (getUiHandlers() != null) {
+			getUiHandlers().openLogin();
+		}
+	}
 }
