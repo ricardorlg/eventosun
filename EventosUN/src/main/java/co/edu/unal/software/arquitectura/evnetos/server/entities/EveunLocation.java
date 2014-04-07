@@ -1,7 +1,9 @@
 package co.edu.unal.software.arquitectura.evnetos.server.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.util.List;
 
 /**
@@ -28,6 +30,10 @@ public class EveunLocation implements Serializable {
 	// bi-directional many-to-one association to EveunEventLocation
 	@OneToMany(mappedBy = "eveunLocation")
 	private List<EveunEventLocation> eveunEventLocations;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_USER")
+	private EveunUser eveunUser;
 
 	public EveunLocation() {
 	}

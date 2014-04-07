@@ -1,8 +1,11 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application.register;
 
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.RegisterAction;
+import co.edu.unal.software.arquitectura.evnetos.shared.actions.RegisterAction.Builder;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.RegisterResult;
+import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
 
+import com.google.common.base.Strings;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
@@ -11,8 +14,8 @@ import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.PresenterWidget;
-import com.sencha.gxt.widget.core.client.form.NumberField;
 import com.sencha.gxt.widget.core.client.form.PasswordField;
+import com.sencha.gxt.widget.core.client.form.SimpleComboBox;
 import com.sencha.gxt.widget.core.client.form.TextField;
 import com.sencha.gxt.widget.core.client.info.Info;
 
@@ -28,9 +31,11 @@ public class RegisterPresenter extends
 
 		public TextField getUsername();
 
-		public NumberField<Integer> getTelefono();
+		public TextField getTelefono();
 
 		public PasswordField getPassword();
+
+		public SimpleComboBox<UserRole> getRoles();
 	}
 
 	private DispatchAsync dispatcher;
@@ -45,36 +50,45 @@ public class RegisterPresenter extends
 
 	@Override
 	public void doRegister() {
-		RegisterAction registerAction;
+		RegisterAction.Builder registerAction;
 		String nombres = getView().getNombres().getText();
-		String apellidos = getView().getApellidos().getText();
 		String correo = getView().getEmail().getText();
 		String username = getView().getUsername().getText();
-		Integer tel = getView().getTelefono().getValue();
 		String clave = getView().getPassword().getText();
-		if (tel != null && tel.toString().length() >= 7) {
-			registerAction = new RegisterAction.Builder(nombres, apellidos,
-					correo, username, clave).telefono(tel).build();
+		UserRole role = getView().getRoles().getValue();
+		String tel = getView().getTelefono().getValue();
+		String apellidos = getView().getApellidos().getValue();
+		registerAction = new Builder(nombres, correo, username, clave, role);
+		if (!Strings.isNullOrEmpty(tel)) {
+			registerAction.telefono(tel);
 
-		} else {
-			registerAction = new RegisterAction(nombres, apellidos, correo,
-					username, clave);
 		}
-		getView().hide();
-		dispatcher.execute(registerAction, new AsyncCallback<RegisterResult>() {
+		if (!Strings.isNullOrEmpty(apellidos)) {
+			registerAction.apellidos(apellidos);
+		}
+		dispatcher.execute(registerAction.build(),
+				new AsyncCallback<RegisterResult>() {
 
-			@Override
-			public void onFailure(Throwable caught) {
-				// TODO Auto-generated method stub
-				Window.alert(caught.getLocalizedMessage());
+					@Override
+					public void onFailure(Throwable caught) {
+						// TODO Auto-generated method stub
+						if (caught.getMessage().equalsIgnoreCase(
+								"UserName en uso")) {
+							Window.alert("Username en uso");
+						} else {
+							Window.alert(caught.getLocalizedMessage());
+							getView().hide();
+						}
 
-			}
+					}
 
-			@Override
-			public void onSuccess(RegisterResult result) {
-				Info.display("Registro de Usuario", result.getMensaje());
-			}
-		});
+					@Override
+					public void onSuccess(RegisterResult result) {
+						Info.display("Registro de Usuario", result.getMensaje());
+						getView().hide();
+
+					}
+				});
 	}
 
 	@Override

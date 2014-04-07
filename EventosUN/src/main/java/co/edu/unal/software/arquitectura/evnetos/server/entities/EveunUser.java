@@ -1,7 +1,12 @@
 package co.edu.unal.software.arquitectura.evnetos.server.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
+
 import java.util.List;
 
 /**
@@ -18,22 +23,30 @@ public class EveunUser implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_USER")
 	private int idUser;
-
+	@NotNull
 	private String email;
 
 	private String lastname;
-
+	@NotNull
 	private String name;
-
+	@NotNull
 	private String password;
 
 	private String phone;
 
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private UserRole role;
+
+	@Column(unique = true, nullable = false)
 	private String username;
 
 	// bi-directional many-to-one association to EveunEvent
 	@OneToMany(mappedBy = "eveunUser")
 	private List<EveunEvent> eveunEvents;
+
+	@OneToMany(mappedBy = "eveunUser")
+	private List<EveunLocation> eveunLocations;
 
 	public EveunUser() {
 	}
@@ -114,6 +127,14 @@ public class EveunUser implements Serializable {
 		eveunEvent.setEveunUser(null);
 
 		return eveunEvent;
+	}
+
+	public UserRole getRole() {
+		return role;
+	}
+
+	public void setRole(UserRole role) {
+		this.role = role;
 	}
 
 }
