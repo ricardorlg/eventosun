@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="9" passed="9">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4959" started-at="2014-04-07T08:46:34Z" finished-at="2014-04-07T08:46:39Z">
+    <groups>
+      <group name="readUsers">
+        <method signature="UserDaoTest.readString()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readString" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.readint()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readint" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+      </group> <!-- readUsers -->
+      <group name="updateUsers">
+        <method signature="UserDaoTest.updateTest()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="updateTest" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+      </group> <!-- updateUsers -->
+      <group name="saveUsers">
+        <method signature="UserDaoTest.saveWithAllFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithAllFields" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.saveWithRequiredFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithRequiredFields" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.usernameShouldBeUnique()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldBeUnique" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.usernameShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldNotBeNull" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+      </group> <!-- saveUsers -->
+    </groups>
+    <test name="Default test" duration-ms="4959" started-at="2014-04-07T08:46:34Z" finished-at="2014-04-07T08:46:39Z">
+      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest">
+        <test-method status="PASS" signature="UserDaoShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="UserDaoShouldNotBeNull" duration-ms="51" started-at="2014-04-07T03:46:34Z" finished-at="2014-04-07T03:46:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserDaoShouldNotBeNull -->
+        <test-method status="PASS" signature="saveWithAllFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithAllFields" duration-ms="4636" started-at="2014-04-07T03:46:34Z" finished-at="2014-04-07T03:46:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveWithAllFields -->
+        <test-method status="PASS" signature="saveWithRequiredFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithRequiredFields" duration-ms="7" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveWithRequiredFields -->
+        <test-method status="PASS" signature="usernameShouldBeUnique()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldBeUnique" duration-ms="44" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+          <exception class="javax.persistence.RollbackException">
+            <message>
+              <![CDATA[Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'ricardorlg' for key 'USERNAME'
+Error Code: 1062
+Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [3, ricardo@prueba.com, null, ricardo, mayhem123, null, GENERAL, ricardorlg]
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@75965af8)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'ricardorlg' for key 'USERNAME'
+Error Code: 1062
+Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [3, ricardo@prueba.com, null, ricardo, mayhem123, null, GENERAL, ricardorlg]
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@75965af8)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
+	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:87)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.usernameShouldBeUnique(UserDaoTest.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'ricardorlg' for key 'USERNAME'
+Error Code: 1062
+Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [3, ricardo@prueba.com, null, ricardo, mayhem123, null, GENERAL, ricardorlg]
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@75965af8)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:331)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:900)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:962)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:631)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:558)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1991)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:298)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:242)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:228)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:377)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:165)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:180)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:489)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:301)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:899)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:798)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2896)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1793)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1775)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1726)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:226)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:125)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4196)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1441)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1531)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:277)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1169)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:132)
+	... 26 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'ricardorlg' for key 'USERNAME'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1041)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2834)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2441)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2366)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2350)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
+	... 57 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.RollbackException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- usernameShouldBeUnique -->
+        <test-method status="PASS" signature="usernameShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldNotBeNull" duration-ms="9" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+          <exception class="javax.persistence.RollbackException">
+            <message>
+              <![CDATA[Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'USERNAME' cannot be null
+Error Code: 1048
+Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [4, ricardo@prueba.com, larrahondo, ricardo, mayhem123, 1234567, GENERAL, null]
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@7a8d59eb)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'USERNAME' cannot be null
+Error Code: 1048
+Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [4, ricardo@prueba.com, larrahondo, ricardo, mayhem123, 1234567, GENERAL, null]
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@7a8d59eb)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
+	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:87)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.usernameShouldNotBeNull(UserDaoTest.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'USERNAME' cannot be null
+Error Code: 1048
+Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	bind => [4, ricardo@prueba.com, larrahondo, ricardo, mayhem123, 1234567, GENERAL, null]
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@7a8d59eb)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:331)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:900)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:962)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:631)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:558)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:1991)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:298)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:242)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:228)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.insertObject(DatasourceCallQueryMechanism.java:377)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:165)
+	at org.eclipse.persistence.internal.queries.StatementQueryMechanism.insertObject(StatementQueryMechanism.java:180)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.insertObjectForWrite(DatabaseQueryMechanism.java:489)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommit(InsertObjectQuery.java:80)
+	at org.eclipse.persistence.queries.InsertObjectQuery.executeCommitWithChangeSet(InsertObjectQuery.java:90)
+	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:301)
+	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:58)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:899)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:798)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:108)
+	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:85)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2896)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1793)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1775)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1726)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitNewObjectsForClassWithChangeSet(CommitManager.java:226)
+	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:125)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4196)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1441)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1531)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.commitRootUnitOfWork(RepeatableWriteUnitOfWork.java:277)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1169)
+	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:132)
+	... 26 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'USERNAME' cannot be null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1041)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2834)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2441)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2366)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2350)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
+	... 57 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.RollbackException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- usernameShouldNotBeNull -->
+        <test-method status="PASS" signature="readString()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readString" duration-ms="54" depends-on-groups="saveUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readString -->
+        <test-method status="PASS" signature="readint()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readint" duration-ms="3" depends-on-groups="saveUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readint -->
+        <test-method status="PASS" signature="updateTest()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="updateTest" duration-ms="54" depends-on-groups="readUsers, saveUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTest -->
+        <test-method status="PASS" signature="delete()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="delete" duration-ms="34" depends-on-groups="readUsers, updateUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:39Z">
+          <exception class="javax.persistence.EntityNotFoundException">
+            <message>
+              <![CDATA[Could not find entity for id: 1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.EntityNotFoundException: Could not find entity for id: 1
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.getReference(EntityManagerImpl.java:1398)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao.delete(UserDao.java:40)
+	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:66)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.delete(UserDaoTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.EntityNotFoundException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete -->
+      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

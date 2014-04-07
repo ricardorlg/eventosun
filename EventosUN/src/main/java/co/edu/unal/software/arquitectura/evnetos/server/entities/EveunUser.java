@@ -23,7 +23,7 @@ public class EveunUser implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID_USER")
 	private int idUser;
-    @NotNull
+	@NotNull
 	private String email;
 
 	private String lastname;
@@ -33,17 +33,18 @@ public class EveunUser implements Serializable {
 	private String password;
 
 	private String phone;
-	
+
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
 	private UserRole role;
-	
+
 	@Column(unique = true, nullable = false)
 	private String username;
 
 	// bi-directional many-to-one association to EveunEvent
 	@OneToMany(mappedBy = "eveunUser")
 	private List<EveunEvent> eveunEvents;
-	
+
 	@OneToMany(mappedBy = "eveunUser")
 	private List<EveunLocation> eveunLocations;
 
@@ -127,11 +128,11 @@ public class EveunUser implements Serializable {
 
 		return eveunEvent;
 	}
-	
+
 	public UserRole getRole() {
 		return role;
 	}
-	
+
 	public void setRole(UserRole role) {
 		this.role = role;
 	}

@@ -18,19 +18,30 @@ public class UserDao {
 		emProvider.get().persist(user);
 		return user;
 	}
-	
-	public EveunUser read(int id){
+
+	public EveunUser read(int id) {
 		EveunUser user = emProvider.get().find(EveunUser.class, id);
 		return user;
 	}
-	
-	public EveunUser read(String userName){
-		TypedQuery<EveunUser> user = emProvider.get().createQuery("select u from eveun_user u where u.username = :userName", EveunUser.class).setParameter("userName", userName);
+
+	public EveunUser read(String userName) {
+		TypedQuery<EveunUser> user = emProvider
+				.get()
+				.createQuery(
+						"select u from EveunUser u where u.username = :userName",
+						EveunUser.class).setParameter("userName", userName);
 		return user.getSingleResult();
 	}
-	
+
 	@Transactional
-	public void delete(EveunUser eu){
-		emProvider.get().remove(eu);
+	public void delete(EveunUser eu) {
+		EntityManager em = emProvider.get();
+
+		em.remove(em.getReference(EveunUser.class, eu.getIdUser()));
+	}
+
+	@Transactional
+	public EveunUser update(EveunUser toUpdate) {
+		return emProvider.get().merge(toUpdate);
 	}
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest">
+        <methods>
+          <include name="usernameShouldNotBeNull"/>
+          <include name="usernameShouldBeUnique"/>
+          <include name="readint"/>
+          <include name="updateTest"/>
+          <include name="readString"/>
+          <include name="saveWithRequiredFields"/>
+          <include name="delete"/>
+          <include name="saveWithAllFields"/>
+        </methods>
+      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

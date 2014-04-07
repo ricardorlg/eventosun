@@ -22,7 +22,6 @@
 		<guice.version>3.0</guice.version>
 
 		<!-- testing -->
-		<junit.version>4.11</junit.version>
 		<jukito.version>1.1</jukito.version>
 
 		<!-- maven -->
@@ -206,29 +205,11 @@
 
 		<!-- Test -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8.8</version>
 		</dependency>
-		<dependency>
-			<groupId>org.jukito</groupId>
-			<artifactId>jukito</artifactId>
-			<version>${jukito.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-remote-driver</artifactId>
-			<version>2.33.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.33.0</version>
-			<scope>test</scope>
-		</dependency>
+		<!-- Persistence -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>eclipselink</artifactId>
@@ -239,6 +220,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.29</version>
 		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<!-- YouTube -->
 		<dependency>
 			<groupId>com.bramosystems.oss.player</groupId>
 			<artifactId>bst-player-api</artifactId>
