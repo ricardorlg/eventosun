@@ -1,6 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.server.services.dao;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser;
 
@@ -16,5 +17,20 @@ public class UserDao {
 	public EveunUser save(EveunUser user) {
 		emProvider.get().persist(user);
 		return user;
+	}
+	
+	public EveunUser read(int id){
+		EveunUser user = emProvider.get().find(EveunUser.class, id);
+		return user;
+	}
+	
+	public EveunUser read(String userName){
+		TypedQuery<EveunUser> user = emProvider.get().createQuery("select u from eveun_user u where u.username = :userName", EveunUser.class).setParameter("userName", userName);
+		return user.getSingleResult();
+	}
+	
+	@Transactional
+	public void delete(EveunUser eu){
+		emProvider.get().remove(eu);
 	}
 }

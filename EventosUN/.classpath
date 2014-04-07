@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/EventosUN-1.0-SNAPSHOT/WEB-INF/classes" path="src/main/java">
+	<classpathentry kind="src" output="target/EventosUN-1.0-release/WEB-INF/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry including="**/*.java" kind="src" path="src/main/resources"/>
-	<classpathentry kind="src" output="target/EventosUN-1.0-SNAPSHOT/WEB-INF/classes" path="target/generated-sources/annotations">
+	<classpathentry kind="src" output="target/EventosUN-1.0-release/WEB-INF/classes" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -30,5 +30,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="target/EventosUN-1.0-SNAPSHOT/WEB-INF/classes"/>
+	<classpathentry kind="output" path="target/EventosUN-1.0-release/WEB-INF/classes"/>
 </classpath>
