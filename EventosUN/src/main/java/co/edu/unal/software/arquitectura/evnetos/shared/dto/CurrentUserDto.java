@@ -1,16 +1,20 @@
 package co.edu.unal.software.arquitectura.evnetos.shared.dto;
 
-import com.google.gwt.user.client.rpc.IsSerializable;
+import java.io.Serializable;
 
 import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
 
-public class CurrentUserDto implements IsSerializable {
+public class CurrentUserDto implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7028492905822940740L;
 	private boolean loggedIn;
 	private String userName;
 	private String sessionId;
 	private UserRole role;
 
-	protected CurrentUserDto() {
+	public CurrentUserDto() {
 		// For serialization
 	}
 
@@ -21,6 +25,13 @@ public class CurrentUserDto implements IsSerializable {
 		this.userName = userName;
 		this.sessionId = sessionId;
 		this.role = role;
+	}
+
+	public void copy(CurrentUserDto origin) {
+		this.loggedIn = origin.loggedIn;
+		this.userName = origin.userName;
+		this.role = origin.role;
+		this.sessionId = origin.sessionId;
 	}
 
 	public boolean isLoggedIn() {

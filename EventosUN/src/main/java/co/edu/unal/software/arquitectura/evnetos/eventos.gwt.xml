@@ -8,9 +8,11 @@
 	<stylesheet src="reset.css" />
 	<inherits name='com.sencha.gxt.ui.GXT' />
 
+
+
 	<!-- GXT Theme -->
 	<!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
-	<inherits name='com.sencha.gxt.theme.blue.Blue' />
+	<inherits name='com.sencha.gxt.theme.gray.Gray' />
 
 	<!-- GWTP -->
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
@@ -23,4 +25,7 @@
 	<!-- Default GIN Module -->
 	<set-configuration-property name="gin.ginjector.modules"
 		value="co.edu.unal.software.arquitectura.evnetos.client.gin.ClientModule" />
+	<!-- Bootstrapper -->
+	<set-configuration-property name="gwtp.bootstrapper"
+		value="co.edu.unal.software.arquitectura.evnetos.client.gin.BootstrapperImpl" />
 </module>

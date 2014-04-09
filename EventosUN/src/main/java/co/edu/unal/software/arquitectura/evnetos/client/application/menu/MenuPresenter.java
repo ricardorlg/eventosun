@@ -1,6 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application.menu;
 
 import co.edu.unal.software.arquitectura.evnetos.client.application.register.RegisterPresenter;
+import co.edu.unal.software.arquitectura.evnetos.client.application.register.login.LoginPresenter;
 
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -14,12 +15,14 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	}
 
 	private RegisterPresenter registerPresenter;
+	private LoginPresenter loginPresenter;
 
 	@Inject
 	MenuPresenter(EventBus eventBus, MyView view,
-			RegisterPresenter registerPresenter) {
+			RegisterPresenter registerPresenter, LoginPresenter loginPresenter) {
 		super(eventBus, view);
 		this.registerPresenter = registerPresenter;
+		this.loginPresenter = loginPresenter;
 		getView().setUiHandlers(this);
 	}
 
@@ -27,6 +30,14 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	public void openRegister() {
 		// TODO Auto-generated method stub
 		addToPopupSlot(registerPresenter);
+	}
+
+	@Override
+	public void openLogin() {
+
+		loginPresenter.getView().hide();
+
+		addToPopupSlot(loginPresenter);
 	}
 
 }

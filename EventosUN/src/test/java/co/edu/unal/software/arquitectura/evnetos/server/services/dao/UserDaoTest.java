@@ -1,9 +1,11 @@
 package co.edu.unal.software.arquitectura.evnetos.server.services.dao;
 
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import javax.persistence.RollbackException;
 
+import org.eclipse.persistence.internal.sessions.AbstractRecord.NoEntry;
 import org.testng.Assert;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
@@ -54,7 +56,11 @@ public class UserDaoTest {
 		EveunUser userReaded = userDao.read(usernameUser2);
 		Assert.assertNotNull(userReaded);
 	}
-
+	@Test(dependsOnGroups = "saveUsers", groups = "readUsers",expectedExceptions=NoResultException.class)
+	public void readStringNotExis() {
+		EveunUser userReaded = userDao.read("prueba");
+		Assert.assertNotNull(userReaded);
+	}
 	@Test(groups = "saveUsers")
 	public void saveWithAllFields() {
 		user = new EveunUser();

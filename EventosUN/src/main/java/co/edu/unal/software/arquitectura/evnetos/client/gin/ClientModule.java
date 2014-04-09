@@ -2,6 +2,7 @@ package co.edu.unal.software.arquitectura.evnetos.client.gin;
 
 import co.edu.unal.software.arquitectura.evnetos.client.application.ApplicationModule;
 import co.edu.unal.software.arquitectura.evnetos.client.place.NameTokens;
+import co.edu.unal.software.arquitectura.evnetos.shared.dto.CurrentUserDto;
 
 import com.gwtplatform.dispatch.rpc.client.gin.RpcDispatchAsyncModule;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
@@ -22,6 +23,7 @@ public class ClientModule extends AbstractPresenterModule {
 		install(new DefaultModule(DefaultPlaceManager.class));
 		install(new ApplicationModule());
 		install(new RpcDispatchAsyncModule());
+		bind(CurrentUserDto.class).asEagerSingleton();
 		// DefaultPlaceManager Places
 		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
 		bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.error);
