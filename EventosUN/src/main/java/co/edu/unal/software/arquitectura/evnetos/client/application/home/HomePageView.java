@@ -30,6 +30,16 @@ public class HomePageView extends ViewImpl implements HomePagePresenter.MyView {
 	@Inject
 	public HomePageView(Binder uiBinder) {
 		widget = uiBinder.createAndBindUi(this);
+	}
+
+	@Override
+	public Widget asWidget() {
+		// TODO Auto-generated method stub
+		return widget;
+	}
+
+	@Override
+	public void renderVideo() {
 		try {
 			// retrieve the basic information about the YouTubeIPlayer as
 			// registered with the API
@@ -54,15 +64,10 @@ public class HomePageView extends ViewImpl implements HomePagePresenter.MyView {
 	}
 
 	@Override
-	public Widget asWidget() {
-		// TODO Auto-generated method stub
-		return widget;
-	}
-
-	@Override
 	public void setInSlot(Object slot, IsWidget content) {
 		if (slot == HomePagePresenter.SLOT_HomePresenter) {
-			mainPanel.setWidget(content);
+			mainPanel.clear();
+			mainPanel.add(content);
 		} else {
 			super.setInSlot(slot, content);
 		}

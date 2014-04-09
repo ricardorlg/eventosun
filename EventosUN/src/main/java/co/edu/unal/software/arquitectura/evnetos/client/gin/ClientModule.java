@@ -28,6 +28,6 @@ public class ClientModule extends AbstractPresenterModule {
 		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
 		bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.error);
 		bindConstant().annotatedWith(UnauthorizedPlace.class).to(
-				NameTokens.error);
+				NameTokens.home);
 	}
 }

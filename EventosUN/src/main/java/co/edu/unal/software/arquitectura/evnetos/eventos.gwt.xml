@@ -19,6 +19,10 @@
 	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 	<inherits name='com.rhemsolutions.PopupWindow' />
 	<inherits name="com.bramosystems.oss.player.youtube.YouTube" />
+	 <inherits name='com.bradrydzewski.gwt.calendar.Calendar' />
+  <inherits name='com.bradrydzewski.gwt.calendar.theme.google.Google' />
+    <inherits name='com.allen_sauer.gwt.dnd.gwt-dnd'/>
+  
 	<source path='client' />
 	<source path='shared' />
 
