@@ -53,7 +53,7 @@ public class LoginView extends PopupViewWithUiHandlers<LoginUiHandlers>
 			return;
 		}
 		if (getUiHandlers() != null) {
-
+			getUiHandlers().login(username.getValue(), password.getValue());
 		}
 	}
 

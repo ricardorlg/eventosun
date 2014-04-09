@@ -1,5 +1,6 @@
 package co.edu.unal.software.arquitectura.evnetos.server.services.handlers;
 
+import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -29,6 +30,7 @@ public class LoginActionHandler implements
 	@Override
 	public LoginResult execute(LoginAction action, ExecutionContext context)
 			throws ActionException {
+		try{
 		EveunUser user = userDao.read(action.getUsername());
 		if (user.getPassword().equals(action.getPassword())) {
 			CurrentUserDto userDto = new CurrentUserDto(false,
@@ -38,6 +40,8 @@ public class LoginActionHandler implements
 		} else {
 			return new LoginResult(
 					"Nombre de usuario o contraseña incorrectos", null);
+		}}catch(NoResultException e){
+			throw new ActionException("Usuario no Encontrado",e.getCause());
 		}
 	}
 

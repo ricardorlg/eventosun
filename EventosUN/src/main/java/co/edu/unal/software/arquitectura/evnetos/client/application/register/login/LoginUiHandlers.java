@@ -3,5 +3,5 @@ package co.edu.unal.software.arquitectura.evnetos.client.application.register.lo
 import com.gwtplatform.mvp.client.UiHandlers;
 
 public interface LoginUiHandlers extends UiHandlers {
-
+	void login(String username, String password);
 }

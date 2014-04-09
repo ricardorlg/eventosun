@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4959" started-at="2014-04-07T08:46:34Z" finished-at="2014-04-07T08:46:39Z">
+  <suite name="Default suite" duration-ms="4865" started-at="2014-04-09T07:29:37Z" finished-at="2014-04-09T07:29:42Z">
     <groups>
       <group name="readUsers">
-        <method signature="UserDaoTest.readString()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readString" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
-        <method signature="UserDaoTest.readint()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readint" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.readString()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="readString" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.readStringNotExis()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="readStringNotExis" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.readint()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="readint" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
       </group> <!-- readUsers -->
       <group name="updateUsers">
-        <method signature="UserDaoTest.updateTest()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="updateTest" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.updateTest()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="updateTest" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
       </group> <!-- updateUsers -->
       <group name="saveUsers">
-        <method signature="UserDaoTest.saveWithAllFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithAllFields" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
-        <method signature="UserDaoTest.saveWithRequiredFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithRequiredFields" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
-        <method signature="UserDaoTest.usernameShouldBeUnique()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldBeUnique" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
-        <method signature="UserDaoTest.usernameShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldNotBeNull" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.saveWithAllFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="saveWithAllFields" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.saveWithRequiredFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="saveWithRequiredFields" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.usernameShouldBeUnique()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="usernameShouldBeUnique" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
+        <method signature="UserDaoTest.usernameShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="usernameShouldNotBeNull" class="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest"/>
       </group> <!-- saveUsers -->
     </groups>
-    <test name="Default test" duration-ms="4959" started-at="2014-04-07T08:46:34Z" finished-at="2014-04-07T08:46:39Z">
+    <test name="Default test" duration-ms="4865" started-at="2014-04-09T07:29:37Z" finished-at="2014-04-09T07:29:42Z">
       <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest">
-        <test-method status="PASS" signature="UserDaoShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="UserDaoShouldNotBeNull" duration-ms="51" started-at="2014-04-07T03:46:34Z" finished-at="2014-04-07T03:46:34Z">
+        <test-method status="PASS" signature="UserDaoShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="UserDaoShouldNotBeNull" duration-ms="19" started-at="2014-04-09T02:29:37Z" finished-at="2014-04-09T02:29:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserDaoShouldNotBeNull -->
-        <test-method status="PASS" signature="saveWithAllFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithAllFields" duration-ms="4636" started-at="2014-04-07T03:46:34Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="saveWithAllFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="saveWithAllFields" duration-ms="4693" started-at="2014-04-09T02:29:37Z" finished-at="2014-04-09T02:29:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveWithAllFields -->
-        <test-method status="PASS" signature="saveWithRequiredFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="saveWithRequiredFields" duration-ms="7" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="saveWithRequiredFields()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="saveWithRequiredFields" duration-ms="5" started-at="2014-04-09T02:29:41Z" finished-at="2014-04-09T02:29:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveWithRequiredFields -->
-        <test-method status="PASS" signature="usernameShouldBeUnique()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldBeUnique" duration-ms="44" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="usernameShouldBeUnique()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="usernameShouldBeUnique" duration-ms="24" started-at="2014-04-09T02:29:41Z" finished-at="2014-04-09T02:29:41Z">
           <exception class="javax.persistence.RollbackException">
             <message>
               <![CDATA[Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
@@ -40,7 +41,7 @@ Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViol
 Error Code: 1062
 Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [3, ricardo@prueba.com, null, ricardo, mayhem123, null, GENERAL, ricardorlg]
-Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@75965af8)]]>
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@2a2f61dd)]]>
             </message>
             <full-stacktrace>
               <![CDATA[javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
@@ -48,10 +49,10 @@ Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViol
 Error Code: 1062
 Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [3, ricardo@prueba.com, null, ricardo, mayhem123, null, GENERAL, ricardorlg]
-Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@75965af8)
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@2a2f61dd)
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
 	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:87)
-	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.usernameShouldBeUnique(UserDaoTest.java:105)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.usernameShouldBeUnique(UserDaoTest.java:111)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -81,7 +82,7 @@ Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViol
 Error Code: 1062
 Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [3, ricardo@prueba.com, null, ricardo, mayhem123, null, GENERAL, ricardorlg]
-Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@75965af8)
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@2a2f61dd)
 	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:331)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:900)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:962)
@@ -141,7 +142,7 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
           <reporter-output>
           </reporter-output>
         </test-method> <!-- usernameShouldBeUnique -->
-        <test-method status="PASS" signature="usernameShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="usernameShouldNotBeNull" duration-ms="9" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="usernameShouldNotBeNull()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="usernameShouldNotBeNull" duration-ms="9" started-at="2014-04-09T02:29:41Z" finished-at="2014-04-09T02:29:41Z">
           <exception class="javax.persistence.RollbackException">
             <message>
               <![CDATA[Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
@@ -149,7 +150,7 @@ Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViol
 Error Code: 1048
 Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [4, ricardo@prueba.com, larrahondo, ricardo, mayhem123, 1234567, GENERAL, null]
-Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@7a8d59eb)]]>
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@21839b1b)]]>
             </message>
             <full-stacktrace>
               <![CDATA[javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.1.v20130918-f2b9fc5): org.eclipse.persistence.exceptions.DatabaseException
@@ -157,10 +158,10 @@ Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViol
 Error Code: 1048
 Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [4, ricardo@prueba.com, larrahondo, ricardo, mayhem123, 1234567, GENERAL, null]
-Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@7a8d59eb)
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@21839b1b)
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
 	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:87)
-	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.usernameShouldNotBeNull(UserDaoTest.java:94)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.usernameShouldNotBeNull(UserDaoTest.java:100)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -190,7 +191,7 @@ Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViol
 Error Code: 1048
 Call: INSERT INTO eveun_user (ID_USER, EMAIL, LASTNAME, NAME, PASSWORD, PHONE, ROLE, USERNAME) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 	bind => [4, ricardo@prueba.com, larrahondo, ricardo, mayhem123, 1234567, GENERAL, null]
-Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@7a8d59eb)
+Query: InsertObjectQuery(co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser@21839b1b)
 	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:331)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:900)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:962)
@@ -250,19 +251,61 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
           <reporter-output>
           </reporter-output>
         </test-method> <!-- usernameShouldNotBeNull -->
-        <test-method status="PASS" signature="readString()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readString" duration-ms="54" depends-on-groups="saveUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="readString()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="readString" duration-ms="30" depends-on-groups="saveUsers" started-at="2014-04-09T02:29:41Z" finished-at="2014-04-09T02:29:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readString -->
-        <test-method status="PASS" signature="readint()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="readint" duration-ms="3" depends-on-groups="saveUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="readStringNotExis()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="readStringNotExis" duration-ms="6" depends-on-groups="saveUsers" started-at="2014-04-09T02:29:42Z" finished-at="2014-04-09T02:29:42Z">
+          <exception class="javax.persistence.NoResultException">
+            <message>
+              <![CDATA[getSingleResult() did not retrieve any entities.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.NoResultException: getSingleResult() did not retrieve any entities.
+	at org.eclipse.persistence.internal.jpa.QueryImpl.throwNoResultException(QueryImpl.java:972)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:522)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.getSingleResult(EJBQueryImpl.java:400)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao.read(UserDao.java:33)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.readStringNotExis(UserDaoTest.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.NoResultException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readStringNotExis -->
+        <test-method status="PASS" signature="readint()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="readint" duration-ms="3" depends-on-groups="saveUsers" started-at="2014-04-09T02:29:42Z" finished-at="2014-04-09T02:29:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readint -->
-        <test-method status="PASS" signature="updateTest()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="updateTest" duration-ms="54" depends-on-groups="readUsers, saveUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:38Z">
+        <test-method status="PASS" signature="updateTest()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="updateTest" duration-ms="28" depends-on-groups="readUsers, saveUsers" started-at="2014-04-09T02:29:42Z" finished-at="2014-04-09T02:29:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateTest -->
-        <test-method status="PASS" signature="delete()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@78a7f540]" name="delete" duration-ms="34" depends-on-groups="readUsers, updateUsers" started-at="2014-04-07T03:46:38Z" finished-at="2014-04-07T03:46:39Z">
+        <test-method status="PASS" signature="delete()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest@2a18fdd7]" name="delete" duration-ms="11" depends-on-groups="readUsers, updateUsers" started-at="2014-04-09T02:29:42Z" finished-at="2014-04-09T02:29:42Z">
           <exception class="javax.persistence.EntityNotFoundException">
             <message>
               <![CDATA[Could not find entity for id: 1]]>
@@ -272,7 +315,7 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.getReference(EntityManagerImpl.java:1398)
 	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao.delete(UserDao.java:40)
 	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:66)
-	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.delete(UserDaoTest.java:36)
+	at co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest.delete(UserDaoTest.java:38)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
