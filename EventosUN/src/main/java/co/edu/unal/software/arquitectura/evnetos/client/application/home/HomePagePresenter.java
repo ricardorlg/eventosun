@@ -21,9 +21,6 @@ public class HomePagePresenter extends
 		void renderVideo();
 	}
 
-	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_HomePresenter = new Type<RevealContentHandler<?>>();
-
 	@ProxyStandard
 	@NameToken(NameTokens.home)
 	public interface MyProxy extends ProxyPlace<HomePagePresenter> {
@@ -38,13 +35,4 @@ public class HomePagePresenter extends
 		this.currentUser = currentUserDto;
 	}
 
-	@Override
-	protected void onReset() {
-		// TODO Auto-generated method stub
-		super.onReset();
-		if(currentUser.isLoggedIn()==false){
-			getView().renderVideo();
-		}
-
-	}
 }

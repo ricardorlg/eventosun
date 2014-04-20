@@ -28,6 +28,8 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 		void renderUserMenus();
 
 		void enabledActionsAdminLocations();
+
+		void renderGeneralMenu();
 	}
 
 	private RegisterPresenter registerPresenter;
@@ -53,7 +55,11 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 				&& currentUser.getRole() == UserRole.LOCATION_ADMIN) {
 			getView().enabledActionsAdminLocations();
 		} else {
-			getView().renderUserMenus();
+			if (this.currentUser.isLoggedIn()) {
+				getView().renderGeneralMenu();
+			} else {
+				getView().renderUserMenus();
+			}
 		}
 
 	}
@@ -97,8 +103,13 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	public void onLogin(LoginEvent event) {
 		if (currentUser.isLoggedIn()
 				&& currentUser.getRole() == UserRole.LOCATION_ADMIN) {
-			System.out.println("a");
 			getView().enabledActionsAdminLocations();
+		} else {
+			if (this.currentUser.isLoggedIn()) {
+				getView().renderGeneralMenu();
+			} else {
+				getView().renderUserMenus();
+			}
 		}
 	}
 

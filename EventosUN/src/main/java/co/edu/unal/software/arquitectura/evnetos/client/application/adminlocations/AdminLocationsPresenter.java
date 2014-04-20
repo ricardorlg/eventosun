@@ -17,6 +17,7 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.sencha.gxt.data.shared.ListStore;
 
+import co.edu.unal.software.arquitectura.evnetos.client.application.ApplicationPresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.application.adminlocations.addlocation.AddLocationPresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.application.home.HomePagePresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.events.AddedLocationEvent;
@@ -51,7 +52,7 @@ public class AdminLocationsPresenter
 	public AdminLocationsPresenter(EventBus eventBus, MyView view,
 			MyProxy proxy, AddLocationPresenter addLocationPresenter,
 			CurrentUserDto currentUser) {
-		super(eventBus, view, proxy, HomePagePresenter.SLOT_HomePresenter);
+		super(eventBus, view, proxy, ApplicationPresenter.SLOT_LayoutPresenter);
 		this.addLocationPresenter = addLocationPresenter;
 		this.currentUser = currentUser;
 		getView().setUiHandlers(this);

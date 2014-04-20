@@ -53,6 +53,47 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 		bindCustomUserUiHandlers();
 		menu.forceLayout();
 	}
+@Override
+	public void renderGeneralMenu() {
+		menu.clear();
+		btnLogout = new TextButton("Logout", recursos.iconKeyGo());
+
+		btnUser = new TextButton(currentLoginInfo.getUserName() == null ? ""
+				: currentLoginInfo.getUserName(), recursos.iconUserSuit());
+
+
+		btnEventos = new TextButton("Eventos", recursos.products());
+		menu.add(btnEventos);
+
+		btnEventos.setEnabled(true);
+		btnEventos.setVisible(true);
+		menu.add(new FillToolItem());
+		menu.add(btnUser);
+		SeparatorToolItem separatorToolItem2 = new SeparatorToolItem();
+		menu.add(separatorToolItem2);
+		menu.add(btnLogout);
+		btnLogout.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().logOut();
+				}
+			}
+		});
+
+		btnEventos.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().eventsClicked();
+				}
+			}
+		});
+		menu.forceLayout();
+
+	}
 
 	private void bindCustomUserUiHandlers() {
 		btnRegistrar.addSelectHandler(new SelectHandler() {
@@ -81,7 +122,6 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 
 	@Override
 	public void enabledActionsAdminLocations() {
-		System.out.println("entra");
 		menu.clear();
 		btnLogout = new TextButton("Logout", recursos.iconKeyGo());
 
@@ -106,12 +146,12 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 		menu.add(separatorToolItem2);
 		menu.add(btnLogout);
 		btnLogout.addSelectHandler(new SelectHandler() {
-			
+
 			@Override
 			public void onSelect(SelectEvent event) {
-if(getUiHandlers()!=null){
-	getUiHandlers().logOut();
-}
+				if (getUiHandlers() != null) {
+					getUiHandlers().logOut();
+				}
 			}
 		});
 		btnAdminLocations.addSelectHandler(new SelectHandler() {

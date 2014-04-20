@@ -1,5 +1,8 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application.home;
 
+import co.edu.unal.software.arquitectura.evnetos.client.resources.Resources;
+import co.edu.unal.software.arquitectura.evnetos.shared.dto.CurrentUserDto;
+
 import com.bramosystems.oss.player.core.client.AbstractMediaPlayer;
 import com.bramosystems.oss.player.core.client.PlayerInfo;
 import com.bramosystems.oss.player.core.client.PlayerUtil;
@@ -7,6 +10,7 @@ import com.bramosystems.oss.player.core.client.PluginNotFoundException;
 import com.bramosystems.oss.player.core.client.PluginVersionException;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -26,15 +30,23 @@ public class HomePageView extends ViewImpl implements HomePagePresenter.MyView {
 	public SimplePanel mainPanel;
 	public Widget widget;
 	public AbstractMediaPlayer player;
+	private CurrentUserDto currentUserDto;
 
 	@Inject
-	public HomePageView(Binder uiBinder) {
+	public HomePageView(Binder uiBinder, CurrentUserDto currentUserDto,
+			Resources recursos) {
 		widget = uiBinder.createAndBindUi(this);
+		this.currentUserDto = currentUserDto;
+		Image im = new Image(recursos.getLogoUnal());
+		im.setSize("100%", "100%");
+
+		mainPanel.add(im);
+
 	}
 
 	@Override
 	public Widget asWidget() {
-		// TODO Auto-generated method stub
+
 		return widget;
 	}
 
@@ -63,13 +75,4 @@ public class HomePageView extends ViewImpl implements HomePagePresenter.MyView {
 		}
 	}
 
-	@Override
-	public void setInSlot(Object slot, IsWidget content) {
-		if (slot == HomePagePresenter.SLOT_HomePresenter) {
-			mainPanel.clear();
-			mainPanel.add(content);
-		} else {
-			super.setInSlot(slot, content);
-		}
-	}
 }

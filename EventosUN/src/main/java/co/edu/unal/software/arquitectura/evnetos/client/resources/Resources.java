@@ -7,7 +7,10 @@ public interface Resources extends ClientBundle {
 
 	@Source("images/products.png")
 	ImageResource products();
-
+	@Source("images/underConstruction.jpg")
+	ImageResource getUnder();
+	@Source("images/logoUnal.jpg")
+	ImageResource getLogoUnal();
 	@Source("images/detailsIcon.png")
 	ImageResource detailsIcon();
 

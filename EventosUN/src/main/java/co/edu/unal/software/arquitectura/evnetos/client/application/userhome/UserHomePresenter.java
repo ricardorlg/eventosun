@@ -14,6 +14,8 @@ import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
+
+import co.edu.unal.software.arquitectura.evnetos.client.application.ApplicationPresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.application.home.HomePagePresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.place.NameTokens;
 
@@ -33,7 +35,7 @@ public class UserHomePresenter extends
 
 	@Inject
 	public UserHomePresenter(EventBus eventBus, MyView view, MyProxy proxy) {
-		super(eventBus, view, proxy, HomePagePresenter.SLOT_HomePresenter);
+		super(eventBus, view, proxy, ApplicationPresenter.SLOT_LayoutPresenter);
 
 		getView().setUiHandlers(this);
 	}

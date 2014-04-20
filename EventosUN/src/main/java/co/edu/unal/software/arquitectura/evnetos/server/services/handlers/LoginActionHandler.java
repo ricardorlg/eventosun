@@ -38,7 +38,7 @@ public class LoginActionHandler implements
 	public LoginResult execute(LoginAction action, ExecutionContext context)
 			throws ActionException {
 		try {
-			EveunUser user = userDao.read(action.getUsername());
+			EveunUser user = userDao.read(action.getUsername().toLowerCase());
 			if (user.getPassword().equals(action.getPassword())) {
 				CurrentUserDto userDto = new CurrentUserDto(user.getIdUser(),
 						false, user.getUsername(), "", user.getRole());

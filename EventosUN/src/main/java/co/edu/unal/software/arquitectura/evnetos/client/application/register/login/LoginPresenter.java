@@ -38,7 +38,7 @@ public class LoginPresenter extends PresenterWidget<LoginPresenter.MyView>
 			DispatchAsync dispatcher, CurrentUserDto currentUser,
 			PlaceManager placeManager) {
 		super(eventBus, view);
-		
+
 		this.dispatcher = dispatcher;
 		this.currentUser = currentUser;
 		this.placeManager = placeManager;
@@ -70,9 +70,10 @@ public class LoginPresenter extends PresenterWidget<LoginPresenter.MyView>
 									expires, null, "/", false);
 							System.out.println(result.getUser());
 							currentUser.copy(result.getUser());
+							getEventBus().fireEvent(new LoginEvent());
+
 							placeManager.revealPlace(new PlaceRequest.Builder()
 									.nameToken(NameTokens.userHome).build());
-							getEventBus().fireEvent(new LoginEvent());
 							getView().hide();
 						} else {
 							Window.alert(result.getResultMessage());
