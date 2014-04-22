@@ -1,6 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.shared.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
 
@@ -9,18 +10,21 @@ public class CurrentUserDto implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7028492905822940740L;
+	private int id;
 	private boolean loggedIn;
 	private String userName;
 	private String sessionId;
 	private UserRole role;
+	private ArrayList<LocationDto> locations = new ArrayList<LocationDto>();
 
 	public CurrentUserDto() {
 		// For serialization
 	}
 
-	public CurrentUserDto(boolean loggedIn, String userName, String sessionId,
-			UserRole role) {
+	public CurrentUserDto(int id, boolean loggedIn, String userName,
+			String sessionId, UserRole role) {
 		super();
+		this.id = id;
 		this.loggedIn = loggedIn;
 		this.userName = userName;
 		this.sessionId = sessionId;
@@ -28,14 +32,40 @@ public class CurrentUserDto implements Serializable {
 	}
 
 	public void copy(CurrentUserDto origin) {
+		this.id = origin.id;
 		this.loggedIn = origin.loggedIn;
 		this.userName = origin.userName;
 		this.role = origin.role;
 		this.sessionId = origin.sessionId;
+		this.locations = origin.locations;
+	}
+
+	public void reset() {
+		id = -1;
+		loggedIn = false;
+		userName = null;
+		sessionId = null;
+		role = null;
+	}
+
+	public void addLocation(LocationDto e) {
+		locations.add(e);
+	}
+
+	public void removeLocation(LocationDto loc) {
+		locations.remove(loc);
 	}
 
 	public boolean isLoggedIn() {
 		return loggedIn;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setLoggedIn(boolean loggedIn) {
@@ -64,6 +94,14 @@ public class CurrentUserDto implements Serializable {
 
 	public void setRole(UserRole role) {
 		this.role = role;
+	}
+
+	public ArrayList<LocationDto> getLocations() {
+		return locations;
+	}
+
+	public void setLocations(ArrayList<LocationDto> locations) {
+		this.locations = locations;
 	}
 
 	@Override

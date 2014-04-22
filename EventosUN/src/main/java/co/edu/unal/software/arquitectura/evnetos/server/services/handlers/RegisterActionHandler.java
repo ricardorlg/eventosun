@@ -25,7 +25,7 @@ public class RegisterActionHandler implements
 		EveunUser user = new EveunUser();
 		user.setName(accion.getNombres());
 		user.setEmail(accion.getCorreo());
-		user.setUsername(accion.getUsername());
+		user.setUsername(accion.getUsername().toLowerCase());
 		user.setPassword(accion.getClave());
 		user.setRole(accion.getRole());
 		if (!Strings.isNullOrEmpty(accion.getTelefono())) {

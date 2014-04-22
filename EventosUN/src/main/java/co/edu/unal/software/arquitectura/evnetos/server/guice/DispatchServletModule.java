@@ -1,5 +1,6 @@
 package co.edu.unal.software.arquitectura.evnetos.server.guice;
 
+import co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDao;
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao;
 
 import com.google.inject.persist.PersistFilter;
@@ -14,6 +15,7 @@ public class DispatchServletModule extends ServletModule {
 		install(new JpaPersistModule("EventosUN"));
 		filter("/*").through(PersistFilter.class);
 		bind(UserDao.class);
+		bind(LocationDao.class);
 		serve("/" + ActionImpl.DEFAULT_SERVICE_NAME + "*").with(
 				DispatchServiceImpl.class);
 	}

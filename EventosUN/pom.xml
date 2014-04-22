@@ -175,6 +175,12 @@
 			<version>${gwtp.version}</version>
 		</dependency>
 
+		<!-- Calendar -->
+		<dependency>
+			<groupId>com.bradrydzewski</groupId>
+			<artifactId>gwt-cal</artifactId>
+			<version>0.9.3.1</version>
+		</dependency>
 
 		<!-- DI -->
 		<dependency>

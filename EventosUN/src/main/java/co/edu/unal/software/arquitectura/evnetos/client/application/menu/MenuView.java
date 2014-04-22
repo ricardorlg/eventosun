@@ -1,40 +1,178 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application.menu;
 
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
+import co.edu.unal.software.arquitectura.evnetos.client.resources.Resources;
+import co.edu.unal.software.arquitectura.evnetos.shared.dto.CurrentUserDto;
+
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import com.sencha.gxt.widget.core.client.button.TextButton;
 import com.sencha.gxt.widget.core.client.event.SelectEvent;
+import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
+import com.sencha.gxt.widget.core.client.toolbar.FillToolItem;
+import com.sencha.gxt.widget.core.client.toolbar.SeparatorToolItem;
+import com.sencha.gxt.widget.core.client.toolbar.ToolBar;
 
 public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 		MenuPresenter.MyView {
-	public interface Binder extends UiBinder<Widget, MenuView> {
-	}
 
-	@UiField
-	TextButton loginButton;
-	@UiField
-	TextButton registerButton;
+	private ToolBar menu;
+	private Resources recursos;
+	private CurrentUserDto currentLoginInfo;
+	private TextButton btnLogout;
+	private TextButton btnUser;
+	private TextButton btnAdminLocations;
+	private TextButton btnEventos;
+	private TextButton btnLogin;
+	private TextButton btnRegistrar;
 
 	@Inject
-	MenuView(Binder binder) {
-		initWidget(binder.createAndBindUi(this));
+	public MenuView(final Resources recursos,
+			final CurrentUserDto currentLoginInfo) {
+		this.recursos = recursos;
+		this.currentLoginInfo = currentLoginInfo;
+		menu = new ToolBar();
+
 	}
 
-	@UiHandler("registerButton")
-	public void register(SelectEvent e) {
-		if (getUiHandlers() != null) {
-			getUiHandlers().openRegister();
-		}
+	@Override
+	public Widget asWidget() {
+		return menu;
 	}
 
-	@UiHandler("loginButton")
-	public void login(SelectEvent e) {
-		if (getUiHandlers() != null) {
-			getUiHandlers().openLogin();
-		}
+	@Override
+	public void renderUserMenus() {
+		menu.clear();
+		menu.add(new FillToolItem());
+		btnRegistrar = new TextButton("Registrarse", recursos.iconUserSuit());
+		btnLogin = new TextButton("Ingresar", recursos.login());
+		menu.add(btnRegistrar);
+		SeparatorToolItem separatorToolItem2 = new SeparatorToolItem();
+		menu.add(separatorToolItem2);
+		menu.add(btnLogin);
+		bindCustomUserUiHandlers();
+		menu.forceLayout();
+	}
+@Override
+	public void renderGeneralMenu() {
+		menu.clear();
+		btnLogout = new TextButton("Logout", recursos.iconKeyGo());
+
+		btnUser = new TextButton(currentLoginInfo.getUserName() == null ? ""
+				: currentLoginInfo.getUserName(), recursos.iconUserSuit());
+
+
+		btnEventos = new TextButton("Eventos", recursos.products());
+		menu.add(btnEventos);
+
+		btnEventos.setEnabled(true);
+		btnEventos.setVisible(true);
+		menu.add(new FillToolItem());
+		menu.add(btnUser);
+		SeparatorToolItem separatorToolItem2 = new SeparatorToolItem();
+		menu.add(separatorToolItem2);
+		menu.add(btnLogout);
+		btnLogout.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().logOut();
+				}
+			}
+		});
+
+		btnEventos.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().eventsClicked();
+				}
+			}
+		});
+		menu.forceLayout();
+
+	}
+
+	private void bindCustomUserUiHandlers() {
+		btnRegistrar.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().openRegister();
+				}
+
+			}
+		});
+		btnLogin.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+
+				if (getUiHandlers() != null) {
+					getUiHandlers().openLogin();
+				}
+
+			}
+		});
+
+	}
+
+	@Override
+	public void enabledActionsAdminLocations() {
+		menu.clear();
+		btnLogout = new TextButton("Logout", recursos.iconKeyGo());
+
+		btnUser = new TextButton(currentLoginInfo.getUserName() == null ? ""
+				: currentLoginInfo.getUserName(), recursos.iconUserSuit());
+
+		btnAdminLocations = new TextButton("Espacios", recursos.IconEdificio());
+		SeparatorToolItem separatorToolItem = new SeparatorToolItem();
+
+		btnEventos = new TextButton("Eventos", recursos.products());
+		menu.add(btnEventos);
+		menu.add(separatorToolItem);
+		menu.add(btnAdminLocations);
+
+		btnAdminLocations.setEnabled(true);
+		btnEventos.setEnabled(true);
+		btnAdminLocations.setVisible(true);
+		btnEventos.setVisible(true);
+		menu.add(new FillToolItem());
+		menu.add(btnUser);
+		SeparatorToolItem separatorToolItem2 = new SeparatorToolItem();
+		menu.add(separatorToolItem2);
+		menu.add(btnLogout);
+		btnLogout.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().logOut();
+				}
+			}
+		});
+		btnAdminLocations.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().adminLocationsClicked();
+				}
+			}
+		});
+
+		btnEventos.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().eventsClicked();
+				}
+			}
+		});
+		menu.forceLayout();
 	}
 }

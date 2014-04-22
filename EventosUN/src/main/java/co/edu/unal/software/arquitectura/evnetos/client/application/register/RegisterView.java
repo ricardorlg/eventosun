@@ -123,7 +123,7 @@ public class RegisterView extends
 		roles.setEmptyText("Selecciona un Rol");
 		p.add(new FieldLabel(roles, "*Rol"), new VerticalLayoutData(1, -1));
 		TextButton registerButton = new TextButton("Registrar",
-				resources.accept());
+				resources.iconAccept());
 		registerButton.addSelectHandler(new SelectHandler() {
 
 			@Override
@@ -137,7 +137,7 @@ public class RegisterView extends
 
 			}
 		});
-		TextButton cancelButton = new TextButton("Cancelar", resources.delete());
+		TextButton cancelButton = new TextButton("Cancelar", resources.iconDelete());
 		cancelButton.addSelectHandler(new SelectHandler() {
 
 			@Override

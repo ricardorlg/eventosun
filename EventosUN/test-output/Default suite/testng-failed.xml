@@ -3,18 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest">
+      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest">
         <methods>
-          <include name="usernameShouldNotBeNull"/>
-          <include name="usernameShouldBeUnique"/>
-          <include name="readint"/>
-          <include name="updateTest"/>
-          <include name="readString"/>
-          <include name="saveWithRequiredFields"/>
-          <include name="delete"/>
-          <include name="saveWithAllFields"/>
+          <include name="save"/>
         </methods>
-      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest -->
+      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
