@@ -5,7 +5,7 @@
 
 	<groupId>co.edu.unal.software.arquitectura.eventos</groupId>
 	<artifactId>EventosUN</artifactId>
-	<version>1.0-release</version>
+	<version>2.0-release</version>
 	<packaging>war</packaging>
 	<name>GWTP Basic with GXT</name>
 	<description>Basic GWTP application with the GXT library</description>
