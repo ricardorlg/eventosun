@@ -35,7 +35,7 @@ public class ApplicationView extends ViewImpl implements
 		if (slot == ApplicationPresenter.SLOT_LayoutPresenter) {
 			if (content != null) {
 				contenedor.clear();
-				contenedor.add(content);
+				contenedor.setWidget(content);
 				contenedor.forceLayout();
 
 			}

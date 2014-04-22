@@ -1,8 +1,22 @@
 package co.edu.unal.software.arquitectura.evnetos.server.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 /**
  * The persistent class for the eveun_location database table.
@@ -22,12 +36,24 @@ public class EveunLocation implements Serializable {
 	@Column(name = "location_address")
 	private String locationAddress;
 
-	@Column(name = "location_name")
+	@Column(unique = true, nullable = false)
 	private String locationName;
+
+	@Temporal(TemporalType.TIME)
+	@NotNull
+	private Date openTime;
+
+	@Temporal(TemporalType.TIME)
+	@NotNull
+	private Date closeTime;
 
 	// bi-directional many-to-one association to EveunEventLocation
 	@OneToMany(mappedBy = "eveunLocation")
 	private List<EveunEventLocation> eveunEventLocations;
+
+	@ManyToOne
+	@JoinColumn(name = "ID_USER")
+	private EveunUser eveunUser;
 
 	public EveunLocation() {
 	}
@@ -64,7 +90,24 @@ public class EveunLocation implements Serializable {
 			List<EveunEventLocation> eveunEventLocations) {
 		this.eveunEventLocations = eveunEventLocations;
 	}
-
+	public Date getOpenTime() {
+		return openTime;
+	}
+	public void setOpenTime(Date openTime) {
+		this.openTime = openTime;
+	}
+	public Date getCloseTime() {
+		return closeTime;
+	}
+	public void setCloseTime(Date closeTime) {
+		this.closeTime = closeTime;
+	}
+public EveunUser getEveunUser() {
+	return eveunUser;
+}
+public void setEveunUser(EveunUser eveunUser) {
+	this.eveunUser = eveunUser;
+}
 	public EveunEventLocation addEveunEventLocation(
 			EveunEventLocation eveunEventLocation) {
 		getEveunEventLocations().add(eveunEventLocation);

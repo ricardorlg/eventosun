@@ -2,6 +2,7 @@ package co.edu.unal.software.arquitectura.evnetos.client.application.home;
 
 import co.edu.unal.software.arquitectura.evnetos.client.application.ApplicationPresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.place.NameTokens;
+import co.edu.unal.software.arquitectura.evnetos.shared.dto.CurrentUserDto;
 
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.inject.Inject;
@@ -17,18 +18,21 @@ import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 public class HomePagePresenter extends
 		Presenter<HomePagePresenter.MyView, HomePagePresenter.MyProxy> {
 	public interface MyView extends View {
+		void renderVideo();
 	}
-
-	@ContentSlot
-	public static final Type<RevealContentHandler<?>> SLOT_HomePresenter = new Type<RevealContentHandler<?>>();
 
 	@ProxyStandard
 	@NameToken(NameTokens.home)
 	public interface MyProxy extends ProxyPlace<HomePagePresenter> {
 	}
 
+	private CurrentUserDto currentUser;
+
 	@Inject
-	public HomePagePresenter(EventBus eventBus, MyView view, MyProxy proxy) {
+	public HomePagePresenter(EventBus eventBus, MyView view, MyProxy proxy,
+			CurrentUserDto currentUserDto) {
 		super(eventBus, view, proxy, ApplicationPresenter.SLOT_LayoutPresenter);
+		this.currentUser = currentUserDto;
 	}
+
 }

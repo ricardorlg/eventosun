@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2697" started-at="2014-04-09T20:16:49Z" finished-at="2014-04-09T20:16:51Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2697" started-at="2014-04-09T20:16:49Z" finished-at="2014-04-09T20:16:51Z">
+      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest@2a6abde0]" name="setUp" is-config="true" duration-ms="2626" started-at="2014-04-09T15:16:49Z" finished-at="2014-04-09T15:16:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="save()[pri:0, instance:co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest@2a6abde0]" name="save" duration-ms="62" started-at="2014-04-09T15:16:51Z" finished-at="2014-04-09T15:16:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- save -->
+      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

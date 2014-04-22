@@ -1,5 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.shared.actions;
 
+import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
+
 import com.gwtplatform.dispatch.annotation.GenDispatch;
 import com.gwtplatform.dispatch.annotation.In;
 import com.gwtplatform.dispatch.annotation.Optional;
@@ -10,6 +12,7 @@ public class Register {
 	@In(1)
 	String nombres;
 	@In(2)
+	@Optional
 	String apellidos;
 	@In(3)
 	String correo;
@@ -17,9 +20,11 @@ public class Register {
 	String username;
 	@In(5)
 	@Optional
-	Integer telefono;
+	String telefono;
 	@In(6)
 	String clave;
+	@In(7)
+	UserRole role;
 	@Out(1)
 	String mensaje;
 

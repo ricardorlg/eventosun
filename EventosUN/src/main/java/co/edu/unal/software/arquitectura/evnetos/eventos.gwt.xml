@@ -8,19 +8,28 @@
 	<stylesheet src="reset.css" />
 	<inherits name='com.sencha.gxt.ui.GXT' />
 
+
+
 	<!-- GXT Theme -->
 	<!-- <inherits name='com.sencha.gxt.theme.blue.Blue'/> -->
-	<inherits name='com.sencha.gxt.theme.blue.Blue' />
+	<inherits name='com.sencha.gxt.theme.gray.Gray' />
 
 	<!-- GWTP -->
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
 	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 	<inherits name='com.rhemsolutions.PopupWindow' />
 	<inherits name="com.bramosystems.oss.player.youtube.YouTube" />
+	 <inherits name='com.bradrydzewski.gwt.calendar.Calendar' />
+  <inherits name='com.bradrydzewski.gwt.calendar.theme.google.Google' />
+    <inherits name='com.allen_sauer.gwt.dnd.gwt-dnd'/>
+  
 	<source path='client' />
 	<source path='shared' />
 
 	<!-- Default GIN Module -->
 	<set-configuration-property name="gin.ginjector.modules"
 		value="co.edu.unal.software.arquitectura.evnetos.client.gin.ClientModule" />
+	<!-- Bootstrapper -->
+	<set-configuration-property name="gwtp.bootstrapper"
+		value="co.edu.unal.software.arquitectura.evnetos.client.gin.BootstrapperImpl" />
 </module>
