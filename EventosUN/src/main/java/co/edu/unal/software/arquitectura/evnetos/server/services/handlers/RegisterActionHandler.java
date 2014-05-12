@@ -34,15 +34,14 @@ public class RegisterActionHandler implements
 		if (!Strings.isNullOrEmpty(accion.getApellidos())) {
 			user.setLastname(accion.getApellidos());
 		}
-		try{
-		userDao.save(user);
-		System.out.println(user.getIdUser());
-		return new RegisterResult("Usuario Registrado con Exito");
+		try {
+			userDao.save(user);
+			System.out.println(user.getIdUser());
+			return new RegisterResult("Usuario Registrado con Exito");
+		} catch (PersistenceException e) {
+			throw new ActionException("UserName en uso", e.getCause());
 		}
-		catch(PersistenceException e){
-			throw new ActionException("UserName en uso",e.getCause());
-		}
-		
+
 	}
 
 	@Override

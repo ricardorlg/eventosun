@@ -2,6 +2,8 @@ package co.edu.unal.software.arquitectura.evnetos.client.place;
 
 public class NameTokens {
 
+	public static final String adminEvents = "adminEvents";
+
 	public static final String adminLocations = "adminLocations";
 
 	public static final String userHome = "userHome";
@@ -30,6 +32,10 @@ public class NameTokens {
 
 	public static String getAdminLocations() {
 		return adminLocations;
+	}
+
+	public static String getAdminEvents() {
+		return adminEvents;
 	}
 
 }

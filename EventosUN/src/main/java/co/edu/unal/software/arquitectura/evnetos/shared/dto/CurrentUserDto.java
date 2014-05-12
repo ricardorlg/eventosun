@@ -16,6 +16,7 @@ public class CurrentUserDto implements Serializable {
 	private String sessionId;
 	private UserRole role;
 	private ArrayList<LocationDto> locations = new ArrayList<LocationDto>();
+	private ArrayList<EventDto> events = new ArrayList<EventDto>();
 
 	public CurrentUserDto() {
 		// For serialization
@@ -38,6 +39,7 @@ public class CurrentUserDto implements Serializable {
 		this.role = origin.role;
 		this.sessionId = origin.sessionId;
 		this.locations = origin.locations;
+		this.events = origin.events;
 	}
 
 	public void reset() {
@@ -54,6 +56,14 @@ public class CurrentUserDto implements Serializable {
 
 	public void removeLocation(LocationDto loc) {
 		locations.remove(loc);
+	}
+
+	public void addEvent(EventDto e) {
+		events.add(e);
+	}
+
+	public void removeEvent(EventDto e) {
+		events.remove(e);
 	}
 
 	public boolean isLoggedIn() {
@@ -102,6 +112,14 @@ public class CurrentUserDto implements Serializable {
 
 	public void setLocations(ArrayList<LocationDto> locations) {
 		this.locations = locations;
+	}
+
+	public ArrayList<EventDto> getEvents() {
+		return events;
+	}
+
+	public void setEvents(ArrayList<EventDto> events) {
+		this.events = events;
 	}
 
 	@Override

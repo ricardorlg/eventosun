@@ -116,7 +116,7 @@ public class AddLocationView extends
 					return;
 				}
 				if (getUiHandlers() != null) {
-					 getUiHandlers().save();
+					getUiHandlers().save();
 				}
 
 			}
@@ -129,7 +129,7 @@ public class AddLocationView extends
 			public void onSelect(SelectEvent event) {
 				form.reset();
 				if (getUiHandlers() != null) {
-					// getUiHandlers().cancel();
+					getUiHandlers().cancel();
 				}
 			}
 		});

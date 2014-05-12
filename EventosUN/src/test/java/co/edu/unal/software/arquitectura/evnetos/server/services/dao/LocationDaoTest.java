@@ -2,6 +2,7 @@ package co.edu.unal.software.arquitectura.evnetos.server.services.dao;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -16,18 +17,20 @@ import co.edu.unal.software.arquitectura.evnetos.server.guice.DispatchServletMod
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.util.MyInitializer;
 import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
 
-@Guice(modules = DispatchServletModule.class)
-public class LocationDaoTest {
+
+
+public class LocationDaoTest extends BaseClassTest{
 	@Inject
 	LocationDao locationDao;
 	@Inject
 	UserDao userDao;
-	@Inject
-	MyInitializer myInitializer;
+
 	private EveunUser user;
 
+	@Override
 	@BeforeClass
-	public void setUp() {
+	protected void setUp() {
+		super.setUp();
 		user = new EveunUser();
 
 		user.setName("ricardo");
@@ -50,12 +53,18 @@ public class LocationDaoTest {
 		throw new RuntimeException("Test not implemented");
 	}
 
+	@Test(dependsOnGroups = "saveLocations")
+	public void readAllTest() {
+		List<EveunLocation> result = locationDao.readAllLocations();
+		Assert.assertTrue(!result.isEmpty());
+	}
+
 	@Test(enabled = false)
 	public void readString() {
 		throw new RuntimeException("Test not implemented");
 	}
 
-	@Test
+	@Test(groups = "saveLocations")
 	public void save() {
 		Calendar c = Calendar.getInstance();
 		c.add(Calendar.HOUR, 2);
@@ -69,8 +78,8 @@ public class LocationDaoTest {
 		location = locationDao.save(location);
 		user.addEveunLocation(location);
 		userDao.update(user);
-		int i=userDao.read(user.getIdUser()).getEveunLocations().size();
-		System.out.println(i);
+		EveunUser u = userDao.read(user.getIdUser());
+		System.out.println(u.getEveunLocations().get(0).getIdLocation());
 		Assert.assertTrue(location.getIdLocation() > 0);
 	}
 }

@@ -1,8 +1,17 @@
 package co.edu.unal.software.arquitectura.evnetos.server.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * The persistent class for the eveun_event_location database table.
@@ -17,11 +26,13 @@ public class EveunEventLocation implements Serializable {
 	@EmbeddedId
 	private EveunEventLocationPK id;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "end_time")
-	private Timestamp endTime;
+	private Date endTime;
 
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "start_time")
-	private Timestamp startTime;
+	private Date startTime;
 
 	// bi-directional many-to-one association to EveunEvent
 	@ManyToOne
@@ -44,19 +55,19 @@ public class EveunEventLocation implements Serializable {
 		this.id = id;
 	}
 
-	public Timestamp getEndTime() {
+	public Date getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(Timestamp endTime) {
+	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 
-	public Timestamp getStartTime() {
+	public Date getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(Timestamp startTime) {
+	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
 

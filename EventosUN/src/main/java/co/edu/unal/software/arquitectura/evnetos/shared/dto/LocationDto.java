@@ -14,17 +14,18 @@ public class LocationDto implements Serializable {
 	private String addres;
 	private Date openTime;
 	private Date closeTime;
-public LocationDto(){
-	
-}
+
+	public LocationDto() {
+
+	}
 
 	public LocationDto(int id, String name, Date openTime, Date closeTime) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.openTime = openTime;
-	this.closeTime = closeTime;
-}
+		super();
+		this.id = id;
+		this.name = name;
+		this.openTime = openTime;
+		this.closeTime = closeTime;
+	}
 
 	public LocationDto(int id, String name, String addres, Date openTime,
 			Date closeTime) {

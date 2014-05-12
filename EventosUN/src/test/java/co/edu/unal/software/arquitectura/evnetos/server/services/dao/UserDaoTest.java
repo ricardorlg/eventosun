@@ -5,7 +5,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import javax.persistence.RollbackException;
 
-import org.eclipse.persistence.internal.sessions.AbstractRecord.NoEntry;
 import org.testng.Assert;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
@@ -17,12 +16,10 @@ import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
 
 import com.google.inject.Inject;
 
-@Guice(modules = DispatchServletModule.class)
-public class UserDaoTest {
+public class UserDaoTest extends BaseClassTest {
 	@Inject
 	UserDao userDao;
-	@Inject
-	MyInitializer myInitializer;
+
 	private int u1;
 	private final String usernameUser2 = "ricardorlg2";
 	private EveunUser user;
@@ -56,11 +53,13 @@ public class UserDaoTest {
 		EveunUser userReaded = userDao.read(usernameUser2);
 		Assert.assertNotNull(userReaded);
 	}
-	@Test(dependsOnGroups = "saveUsers", groups = "readUsers",expectedExceptions=NoResultException.class)
+
+	@Test(dependsOnGroups = "saveUsers", groups = "readUsers", expectedExceptions = NoResultException.class)
 	public void readStringNotExis() {
 		EveunUser userReaded = userDao.read("prueba");
 		Assert.assertNotNull(userReaded);
 	}
+
 	@Test(groups = "saveUsers")
 	public void saveWithAllFields() {
 		user = new EveunUser();

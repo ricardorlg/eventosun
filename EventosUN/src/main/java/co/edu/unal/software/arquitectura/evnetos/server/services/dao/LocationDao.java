@@ -1,5 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.server.services.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -21,14 +23,21 @@ public class LocationDao {
 
 	public EveunLocation read(int id) {
 		EveunLocation location = emProvider.get().find(EveunLocation.class, id);
+
 		return location;
+	}
+
+	public List<EveunLocation> readAllLocations() {
+		return emProvider.get()
+				.createNamedQuery("EveunLocation.findAll", EveunLocation.class)
+				.getResultList();
 	}
 
 	public EveunLocation read(String locationName) {
 		TypedQuery<EveunLocation> locationQueryByName = emProvider
 				.get()
 				.createQuery(
-						"select l from EveunLocation l where u.locationName = :locationName",
+						"select l from EveunLocation l where l.locationName = :locationName",
 						EveunLocation.class)
 				.setParameter("locationName", locationName);
 		return locationQueryByName.getSingleResult();

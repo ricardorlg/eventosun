@@ -16,7 +16,6 @@ import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.PresenterWidget;
-import com.gwtplatform.mvp.client.View;
 import com.sencha.gxt.widget.core.client.form.TextField;
 import com.sencha.gxt.widget.core.client.form.TimeField;
 import com.sencha.gxt.widget.core.client.info.Info;
@@ -73,7 +72,9 @@ public class AddLocationPresenter extends
 						Info.display("Creacion de Espacio",
 								"Espacio Creado con exito");
 						currentuser.addLocation(result.getLocationAdded());
-						getEventBus().fireEvent(new AddedLocationEvent(result.getLocationAdded()));
+						getEventBus().fireEvent(
+								new AddedLocationEvent(result
+										.getLocationAdded()));
 						getView().hide();
 					}
 				});

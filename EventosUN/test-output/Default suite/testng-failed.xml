@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest">
+      <class name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.EventLocationDaoTest">
         <methods>
+          <include name="findByLocationAndDateTest"/>
           <include name="save"/>
+          <include name="findByLocationTest"/>
         </methods>
-      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest -->
+      </class> <!-- co.edu.unal.software.arquitectura.evnetos.server.services.dao.EventLocationDaoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

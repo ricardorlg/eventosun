@@ -7,12 +7,14 @@ import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import co.edu.unal.software.arquitectura.evnetos.server.entities.EveunEvent;
 import co.edu.unal.software.arquitectura.evnetos.server.entities.EveunLocation;
 import co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser;
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoginAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoginResult;
 import co.edu.unal.software.arquitectura.evnetos.shared.dto.CurrentUserDto;
+import co.edu.unal.software.arquitectura.evnetos.shared.dto.EventDto;
 import co.edu.unal.software.arquitectura.evnetos.shared.dto.LocationDto;
 import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
 
@@ -45,6 +47,8 @@ public class LoginActionHandler implements
 				if (user.getRole() == UserRole.LOCATION_ADMIN) {
 					userDto.setLocations(locationsFromServer(user
 							.getEveunLocations()));
+				} else if (user.getRole() == UserRole.EVENT_ADMIN) {
+					userDto.setEvents(EventsFromServer(user.getEveunEvents()));
 				}
 				storeUserInSession(userDto);
 				return new LoginResult("", userDto);
@@ -90,5 +94,21 @@ public class LoginActionHandler implements
 			listLocations.add(loca);
 		}
 		return listLocations;
+	}
+
+	private ArrayList<EventDto> EventsFromServer(List<EveunEvent> events) {
+		ArrayList<EventDto> listEvents = new ArrayList<EventDto>();
+		for (EveunEvent even : events) {
+			EventDto eve = new EventDto();
+			eve.setId(even.getIdEvent());
+			eve.setEventName(even.getEventName());
+			eve.setStartDate(even.getStartTime());
+			eve.setEndDate(even.getEndTime());
+			if (Strings.isNullOrEmpty(even.getEventDescription())) {
+				eve.setEventDescription(even.getEventDescription());
+			}
+			listEvents.add(eve);
+		}
+		return listEvents;
 	}
 }

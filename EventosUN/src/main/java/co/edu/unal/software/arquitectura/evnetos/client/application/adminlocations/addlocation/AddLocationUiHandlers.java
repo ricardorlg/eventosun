@@ -4,5 +4,6 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 public interface AddLocationUiHandlers extends UiHandlers {
 	void save();
+
 	void cancel();
 }

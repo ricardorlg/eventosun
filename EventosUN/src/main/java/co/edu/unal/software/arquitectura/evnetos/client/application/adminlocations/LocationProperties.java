@@ -23,5 +23,4 @@ public interface LocationProperties extends PropertyAccess<LocationDto> {
 
 	ValueProvider<LocationDto, Date> closeTime();
 
-
 }

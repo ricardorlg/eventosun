@@ -9,7 +9,7 @@ import com.gwtplatform.dispatch.annotation.In;
 import com.gwtplatform.dispatch.annotation.Optional;
 import com.gwtplatform.dispatch.annotation.Out;
 
-@GenDispatch(isSecure=false)
+@GenDispatch(isSecure = false)
 public class SaveLocation {
 	@In(1)
 	private String name;

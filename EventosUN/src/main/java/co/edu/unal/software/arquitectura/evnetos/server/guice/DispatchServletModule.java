@@ -1,5 +1,7 @@
 package co.edu.unal.software.arquitectura.evnetos.server.guice;
 
+import co.edu.unal.software.arquitectura.evnetos.server.services.dao.EventDao;
+import co.edu.unal.software.arquitectura.evnetos.server.services.dao.EventLocationDao;
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDao;
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao;
 
@@ -16,6 +18,8 @@ public class DispatchServletModule extends ServletModule {
 		filter("/*").through(PersistFilter.class);
 		bind(UserDao.class);
 		bind(LocationDao.class);
+		bind(EventDao.class);
+		bind(EventLocationDao.class);
 		serve("/" + ActionImpl.DEFAULT_SERVICE_NAME + "*").with(
 				DispatchServiceImpl.class);
 	}

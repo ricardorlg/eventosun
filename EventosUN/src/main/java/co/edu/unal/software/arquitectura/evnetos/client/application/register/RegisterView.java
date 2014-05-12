@@ -137,7 +137,8 @@ public class RegisterView extends
 
 			}
 		});
-		TextButton cancelButton = new TextButton("Cancelar", resources.iconDelete());
+		TextButton cancelButton = new TextButton("Cancelar",
+				resources.iconDelete());
 		cancelButton.addSelectHandler(new SelectHandler() {
 
 			@Override

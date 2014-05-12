@@ -25,6 +25,7 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 	private TextButton btnEventos;
 	private TextButton btnLogin;
 	private TextButton btnRegistrar;
+	private TextButton btnAdminEvents;
 
 	@Inject
 	public MenuView(final Resources recursos,
@@ -53,14 +54,14 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 		bindCustomUserUiHandlers();
 		menu.forceLayout();
 	}
-@Override
+
+	@Override
 	public void renderGeneralMenu() {
 		menu.clear();
 		btnLogout = new TextButton("Logout", recursos.iconKeyGo());
 
 		btnUser = new TextButton(currentLoginInfo.getUserName() == null ? ""
 				: currentLoginInfo.getUserName(), recursos.iconUserSuit());
-
 
 		btnEventos = new TextButton("Eventos", recursos.products());
 		menu.add(btnEventos);
@@ -160,6 +161,63 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 			public void onSelect(SelectEvent event) {
 				if (getUiHandlers() != null) {
 					getUiHandlers().adminLocationsClicked();
+				}
+			}
+		});
+
+		btnEventos.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().eventsClicked();
+				}
+			}
+		});
+		menu.forceLayout();
+	}
+
+	@Override
+	public void enabledActionsAdminEvents() {
+		menu.clear();
+		btnLogout = new TextButton("Logout", recursos.iconKeyGo());
+
+		btnUser = new TextButton(currentLoginInfo.getUserName() == null ? ""
+				: currentLoginInfo.getUserName(), recursos.iconUserSuit());
+
+		btnAdminEvents = new TextButton("Administrar Eventos",
+				recursos.iconUserSuit());
+		SeparatorToolItem separatorToolItem = new SeparatorToolItem();
+
+		btnEventos = new TextButton("Eventos", recursos.products());
+		menu.add(btnEventos);
+		menu.add(separatorToolItem);
+		menu.add(btnAdminEvents);
+
+		btnAdminEvents.setEnabled(true);
+		btnEventos.setEnabled(true);
+		btnAdminEvents.setVisible(true);
+		btnEventos.setVisible(true);
+		menu.add(new FillToolItem());
+		menu.add(btnUser);
+		SeparatorToolItem separatorToolItem2 = new SeparatorToolItem();
+		menu.add(separatorToolItem2);
+		menu.add(btnLogout);
+		btnLogout.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().logOut();
+				}
+			}
+		});
+		btnAdminEvents.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().adminEventsClicked();
 				}
 			}
 		});

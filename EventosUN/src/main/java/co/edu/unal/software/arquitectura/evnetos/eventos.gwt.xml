@@ -18,14 +18,15 @@
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
 	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 	<inherits name='com.rhemsolutions.PopupWindow' />
-	<inherits name="com.bramosystems.oss.player.youtube.YouTube" />
-	 <inherits name='com.bradrydzewski.gwt.calendar.Calendar' />
-  <inherits name='com.bradrydzewski.gwt.calendar.theme.google.Google' />
-    <inherits name='com.allen_sauer.gwt.dnd.gwt-dnd'/>
-  
+	<inherits name='com.bradrydzewski.gwt.calendar.Calendar' />
+	<inherits name='com.bradrydzewski.gwt.calendar.theme.google.Google' />
+	<inherits name='com.allen_sauer.gwt.dnd.gwt-dnd' />
+
 	<source path='client' />
 	<source path='shared' />
-
+	<extend-property name='locale' values='en' />
+	<set-property-fallback name='locale' value='en' />
+	<set-property name='locale' value='en' />
 	<!-- Default GIN Module -->
 	<set-configuration-property name="gin.ginjector.modules"
 		value="co.edu.unal.software.arquitectura.evnetos.client.gin.ClientModule" />

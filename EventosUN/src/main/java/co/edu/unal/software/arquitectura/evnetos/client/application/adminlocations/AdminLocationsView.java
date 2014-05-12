@@ -15,11 +15,7 @@ import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.SimplePanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwtplatform.mvp.client.ViewImpl;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.widget.core.client.ContentPanel;
@@ -55,18 +51,16 @@ public class AdminLocationsView extends
 	TextButton edit;
 	@UiField
 	TextButton delete;
-	private Binder uiBinder;
 	private CurrentUserDto currentUser;
 
 	@Inject
 	AdminLocationsView(Binder uiBinder, CurrentUserDto currentUserDto) {
-		this.uiBinder = uiBinder;
 		this.currentUser = currentUserDto;
 		columnModel = initColumnModel();
 		listStore = initListStore();
 		widget = (ContentPanel) uiBinder.createAndBindUi(this);
 		gridView.setAutoExpandColumn(columnModel.getColumn(0));
-gridView.setAutoFill(true);
+		gridView.setAutoFill(true);
 	}
 
 	@Override

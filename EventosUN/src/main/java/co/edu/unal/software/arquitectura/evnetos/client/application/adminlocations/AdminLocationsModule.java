@@ -1,7 +1,8 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application.adminlocations;
 
-import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import co.edu.unal.software.arquitectura.evnetos.client.application.adminlocations.addlocation.AddLocationModule;
+
+import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
 public class AdminLocationsModule extends AbstractPresenterModule {
 	@Override

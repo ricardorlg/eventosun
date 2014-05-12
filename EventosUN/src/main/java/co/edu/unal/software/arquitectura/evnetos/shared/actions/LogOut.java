@@ -7,4 +7,5 @@ import com.gwtplatform.dispatch.annotation.Out;
 public class LogOut {
 	@Out(1)
 	private String resultMessage;
+
 }

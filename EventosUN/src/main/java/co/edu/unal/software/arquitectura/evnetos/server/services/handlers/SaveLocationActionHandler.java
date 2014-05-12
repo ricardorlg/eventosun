@@ -4,9 +4,9 @@ import co.edu.unal.software.arquitectura.evnetos.server.entities.EveunLocation;
 import co.edu.unal.software.arquitectura.evnetos.server.entities.EveunUser;
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDao;
 import co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDao;
+import co.edu.unal.software.arquitectura.evnetos.server.util.GeneralUtil;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.SaveLocationAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.SaveLocationResult;
-import co.edu.unal.software.arquitectura.evnetos.shared.dto.LocationDto;
 
 import com.google.common.base.Strings;
 import com.google.inject.Inject;
@@ -38,7 +38,8 @@ public class SaveLocationActionHandler implements
 			location = locationDao.save(location);
 			user.addEveunLocation(location);
 			userDao.update(user);
-			return new SaveLocationResult("", copyFromLocationEntity(location));
+			return new SaveLocationResult("",
+					GeneralUtil.copyFromLocationEntity(location));
 		} catch (Exception e) {
 			throw new ActionException(e);
 		}
@@ -55,18 +56,6 @@ public class SaveLocationActionHandler implements
 			ExecutionContext context) throws ActionException {
 		// TODO Auto-generated method stub
 
-	}
-
-	private LocationDto copyFromLocationEntity(EveunLocation location) {
-		if (Strings.isNullOrEmpty(location.getLocationAddress())) {
-			return new LocationDto(location.getIdLocation(),
-					location.getLocationName(), location.getOpenTime(),
-					location.getCloseTime());
-		} else {
-			return new LocationDto(location.getIdLocation(),
-					location.getLocationName(), location.getLocationAddress(),
-					location.getOpenTime(), location.getCloseTime());
-		}
 	}
 
 }

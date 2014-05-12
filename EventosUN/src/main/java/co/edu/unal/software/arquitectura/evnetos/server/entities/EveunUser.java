@@ -1,14 +1,23 @@
 package co.edu.unal.software.arquitectura.evnetos.server.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import co.edu.unal.software.arquitectura.evnetos.shared.util.UserRole;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The persistent class for the eveun_user database table.
@@ -43,11 +52,13 @@ public class EveunUser implements Serializable {
 	private String username;
 
 	// bi-directional many-to-one association to EveunEvent
-	@OneToMany(mappedBy = "eveunUser")
+	@OneToMany(mappedBy = "eveunUser", cascade = { CascadeType.MERGE,
+			CascadeType.REMOVE })
 	private List<EveunEvent> eveunEvents;
 
-	@OneToMany(mappedBy = "eveunUser")
-	private List<EveunLocation> eveunLocations=new ArrayList<EveunLocation>();
+	@OneToMany(mappedBy = "eveunUser", cascade = { CascadeType.MERGE,
+			CascadeType.REMOVE })
+	private List<EveunLocation> eveunLocations = new ArrayList<EveunLocation>();
 
 	public EveunUser() {
 	}

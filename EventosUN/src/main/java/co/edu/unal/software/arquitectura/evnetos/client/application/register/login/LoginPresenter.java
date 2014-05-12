@@ -2,8 +2,6 @@ package co.edu.unal.software.arquitectura.evnetos.client.application.register.lo
 
 import java.util.Date;
 
-import javax.persistence.NoResultException;
-
 import co.edu.unal.software.arquitectura.evnetos.client.events.LoginEvent;
 import co.edu.unal.software.arquitectura.evnetos.client.place.NameTokens;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoginAction;
@@ -16,13 +14,12 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
-import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
-import com.sencha.gxt.widget.core.client.info.Info;
 
 public class LoginPresenter extends PresenterWidget<LoginPresenter.MyView>
 		implements LoginUiHandlers {

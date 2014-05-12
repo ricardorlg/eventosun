@@ -30,6 +30,8 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 		void enabledActionsAdminLocations();
 
 		void renderGeneralMenu();
+
+		void enabledActionsAdminEvents();
 	}
 
 	private RegisterPresenter registerPresenter;
@@ -51,16 +53,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 		this.dispatcher = dispatcher;
 		getView().setUiHandlers(this);
 
-		if (currentUser.isLoggedIn()
-				&& currentUser.getRole() == UserRole.LOCATION_ADMIN) {
-			getView().enabledActionsAdminLocations();
-		} else {
-			if (this.currentUser.isLoggedIn()) {
-				getView().renderGeneralMenu();
-			} else {
-				getView().renderUserMenus();
-			}
-		}
+		renderMenu();
 
 	}
 
@@ -101,9 +94,16 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 
 	@Override
 	public void onLogin(LoginEvent event) {
+		renderMenu();
+	}
+
+	private void renderMenu() {
 		if (currentUser.isLoggedIn()
 				&& currentUser.getRole() == UserRole.LOCATION_ADMIN) {
 			getView().enabledActionsAdminLocations();
+		} else if (currentUser.isLoggedIn()
+				&& currentUser.getRole() == UserRole.EVENT_ADMIN) {
+			getView().enabledActionsAdminEvents();
 		} else {
 			if (this.currentUser.isLoggedIn()) {
 				getView().renderGeneralMenu();
@@ -111,6 +111,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 				getView().renderUserMenus();
 			}
 		}
+
 	}
 
 	@Override
@@ -132,6 +133,12 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 						getView().renderUserMenus();
 					}
 				});
+	}
+
+	@Override
+	public void adminEventsClicked() {
+		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(
+				NameTokens.adminEvents).build());
 	}
 
 }

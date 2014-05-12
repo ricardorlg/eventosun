@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite Pruebas DAO EventosUn" preserve-order="true"
+	parallel="classes">
+	<test name="Test Dao EventLocation" verbose="1">
+		<classes>
+			<class
+				name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.EventLocationDaoTest" />
+
+		</classes>
+	</test>
+	<test name="Test Dao Location" verbose="1">
+		<classes>
+			<class
+				name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.LocationDaoTest" />
+
+		</classes>
+	</test>
+	<test name="Test Dao UserDao" verbose="1">
+		<classes>
+			<class
+				name="co.edu.unal.software.arquitectura.evnetos.server.services.dao.UserDaoTest" />
+
+		</classes>
+	</test>
+</suite>

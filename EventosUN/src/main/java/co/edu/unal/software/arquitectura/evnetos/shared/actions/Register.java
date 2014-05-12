@@ -27,5 +27,4 @@ public class Register {
 	UserRole role;
 	@Out(1)
 	String mensaje;
-
 }

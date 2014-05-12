@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,7 +49,8 @@ public class EveunLocation implements Serializable {
 	private Date closeTime;
 
 	// bi-directional many-to-one association to EveunEventLocation
-	@OneToMany(mappedBy = "eveunLocation")
+	@OneToMany(mappedBy = "eveunLocation", cascade = { CascadeType.REMOVE,
+			CascadeType.REFRESH })
 	private List<EveunEventLocation> eveunEventLocations;
 
 	@ManyToOne
@@ -90,24 +92,31 @@ public class EveunLocation implements Serializable {
 			List<EveunEventLocation> eveunEventLocations) {
 		this.eveunEventLocations = eveunEventLocations;
 	}
+
 	public Date getOpenTime() {
 		return openTime;
 	}
+
 	public void setOpenTime(Date openTime) {
 		this.openTime = openTime;
 	}
+
 	public Date getCloseTime() {
 		return closeTime;
 	}
+
 	public void setCloseTime(Date closeTime) {
 		this.closeTime = closeTime;
 	}
-public EveunUser getEveunUser() {
-	return eveunUser;
-}
-public void setEveunUser(EveunUser eveunUser) {
-	this.eveunUser = eveunUser;
-}
+
+	public EveunUser getEveunUser() {
+		return eveunUser;
+	}
+
+	public void setEveunUser(EveunUser eveunUser) {
+		this.eveunUser = eveunUser;
+	}
+
 	public EveunEventLocation addEveunEventLocation(
 			EveunEventLocation eveunEventLocation) {
 		getEveunEventLocations().add(eveunEventLocation);
