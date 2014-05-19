@@ -11,9 +11,11 @@ public class Login {
 	@In(1)
 	private String username;
 	@In(2)
+	
 	private String password;
 	@Out(1)
 	private String resultMessage;
 	@Out(2)
 	private CurrentUserDto user;
+
 }
