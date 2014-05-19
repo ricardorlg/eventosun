@@ -14,4 +14,6 @@ public interface MenuUiHandlers extends UiHandlers {
 	void logOut();
 
 	void adminEventsClicked();
+
+	void loadServerInfo();
 }

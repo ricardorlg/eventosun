@@ -3,6 +3,7 @@ package co.edu.unal.software.arquitectura.evnetos.server.guice;
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.EventCreationActionHandler;
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.LoadAllEventsByLocationActionHandler;
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.LoadAllLocationsActionHandler;
+import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.LoadServerInfoActionHandler;
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.LogOutActionHandler;
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.LoginActionHandler;
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.LoginByCookieActionHanfler;
@@ -11,6 +12,7 @@ import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.SaveLo
 import co.edu.unal.software.arquitectura.evnetos.server.services.handlers.VerifyDisponibilityActionHanler;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoadAllEventsByLocationAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoadAllLocationsAction;
+import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoadServerInfoAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LogOutAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoginAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoginByCookieAction;
@@ -36,5 +38,7 @@ public class ServerModule extends HandlerModule {
 		bindHandler(SaveEventAction.class, EventCreationActionHandler.class);
 		bindHandler(LoadAllEventsByLocationAction.class,
 				LoadAllEventsByLocationActionHandler.class);
+		bindHandler(LoadServerInfoAction.class,
+				LoadServerInfoActionHandler.class);
 	}
 }

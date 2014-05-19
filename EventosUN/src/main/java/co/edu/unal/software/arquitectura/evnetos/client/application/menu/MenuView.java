@@ -92,6 +92,15 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 				}
 			}
 		});
+		btnUser.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().loadServerInfo();
+				}
+			}
+		});
 		menu.forceLayout();
 
 	}
@@ -174,6 +183,15 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 				}
 			}
 		});
+		btnUser.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().loadServerInfo();
+				}
+			}
+		});
 		menu.forceLayout();
 	}
 
@@ -228,6 +246,15 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements
 			public void onSelect(SelectEvent event) {
 				if (getUiHandlers() != null) {
 					getUiHandlers().eventsClicked();
+				}
+			}
+		});
+		btnUser.addSelectHandler(new SelectHandler() {
+
+			@Override
+			public void onSelect(SelectEvent event) {
+				if (getUiHandlers() != null) {
+					getUiHandlers().loadServerInfo();
 				}
 			}
 		});

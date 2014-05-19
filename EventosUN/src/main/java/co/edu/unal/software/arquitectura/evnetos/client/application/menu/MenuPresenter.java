@@ -1,10 +1,13 @@
 package co.edu.unal.software.arquitectura.evnetos.client.application.menu;
 
+import co.edu.unal.software.arquitectura.evnetos.client.application.menu.serverresponse.ServerResponsePresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.application.register.RegisterPresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.application.register.login.LoginPresenter;
 import co.edu.unal.software.arquitectura.evnetos.client.events.LoginEvent;
 import co.edu.unal.software.arquitectura.evnetos.client.events.LoginEvent.LoginHandler;
 import co.edu.unal.software.arquitectura.evnetos.client.place.NameTokens;
+import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoadServerInfoAction;
+import co.edu.unal.software.arquitectura.evnetos.shared.actions.LoadServerInfoResult;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LogOutAction;
 import co.edu.unal.software.arquitectura.evnetos.shared.actions.LogOutResult;
 import co.edu.unal.software.arquitectura.evnetos.shared.dto.CurrentUserDto;
@@ -38,11 +41,13 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	private LoginPresenter loginPresenter;
 	private final PlaceManager placeManager;
 	private final CurrentUserDto currentUser;
+	private ServerResponsePresenter responsePresenter;
 	private DispatchAsync dispatcher;
 
 	@Inject
 	MenuPresenter(EventBus eventBus, MyView view,
 			RegisterPresenter registerPresenter, LoginPresenter loginPresenter,
+			ServerResponsePresenter responsePresenter,
 			PlaceManager placeManager, CurrentUserDto currentUser,
 			DispatchAsync dispatcher) {
 		super(eventBus, view);
@@ -51,6 +56,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 		this.placeManager = placeManager;
 		this.currentUser = currentUser;
 		this.dispatcher = dispatcher;
+		this.responsePresenter = responsePresenter;
 		getView().setUiHandlers(this);
 
 		renderMenu();
@@ -139,6 +145,26 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	public void adminEventsClicked() {
 		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(
 				NameTokens.adminEvents).build());
+	}
+
+	@Override
+	public void loadServerInfo() {
+		dispatcher.execute(new LoadServerInfoAction(),
+				new AsyncCallback<LoadServerInfoResult>() {
+
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert(caught.getLocalizedMessage());
+
+					}
+
+					@Override
+					public void onSuccess(LoadServerInfoResult result) {
+						responsePresenter.setResponse(result
+								.getServerResponse());
+						addToPopupSlot(responsePresenter);
+					}
+				});
 	}
 
 }

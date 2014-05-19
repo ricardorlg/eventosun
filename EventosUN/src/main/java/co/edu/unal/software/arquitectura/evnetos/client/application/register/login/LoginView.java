@@ -41,20 +41,32 @@ public class LoginView extends PopupViewWithUiHandlers<LoginUiHandlers>
 		super(eventBus);
 		widget = uiBinder.createAndBindUi(this);
 		framePanel.setButtonAlign(BoxLayoutPack.START);
+		username.focus();
 		username.addValidator(new RegExValidator(USERNAME_PATTERN,
 				"UserName invalido"));
 		password.addValidator(new RegExValidator(PASSWORD_PATTERN,
 				"Password invalida"));
+
 	}
 
 	@UiHandler("loginButton")
 	public void login(SelectEvent e) {
+		doLogin();
+	}
+
+	private void doLogin() {
 		if (!LoginPanel.isValid()) {
+			System.out.println("invalido");
 			return;
 		}
 		if (getUiHandlers() != null) {
 			getUiHandlers().login(username.getValue(), password.getValue());
 		}
+	}
+
+	@Override
+	public TextField getUsername() {
+		return username;
 	}
 
 	@Override

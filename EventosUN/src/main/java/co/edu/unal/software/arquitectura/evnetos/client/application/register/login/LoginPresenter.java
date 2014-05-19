@@ -20,10 +20,13 @@ import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
+import com.sencha.gxt.widget.core.client.form.TextField;
 
 public class LoginPresenter extends PresenterWidget<LoginPresenter.MyView>
 		implements LoginUiHandlers {
 	public interface MyView extends PopupView, HasUiHandlers<LoginUiHandlers> {
+
+		TextField getUsername();
 	}
 
 	private DispatchAsync dispatcher;
@@ -41,6 +44,13 @@ public class LoginPresenter extends PresenterWidget<LoginPresenter.MyView>
 		this.placeManager = placeManager;
 		getView().setUiHandlers(this);
 		System.out.println(this.currentUser);
+	}
+
+	@Override
+	protected void onReveal() {
+		// TODO Auto-generated method stub
+		super.onReveal();
+		getView().getUsername().focus();
 	}
 
 	public void login(String username, String password) {
